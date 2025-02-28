@@ -10,88 +10,97 @@
             text-align: center;
             margin-top: 50px;
         }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
         .card {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
-        .hidden {
-            display: none;
+        img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <form method="post">
         <button type="submit" name="generate">Generate Card</button>
-        <button type="submit" name="reset">Reset</button>
     </form>
 
     <?php
     require 'vendor/autoload.php';
     use PhpOffice\PhpSpreadsheet\IOFactory;
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['generate'])) {
-            $file = 'xlsx/sample.xlsx';
-            
-            if (file_exists($file)) {
-                $spreadsheet = IOFactory::load($file);
-                $sheet = $spreadsheet->getActiveSheet();
-                $firstRow = true;
-                
-                echo '<div class="card">';
-                
-                foreach ($sheet->getRowIterator() as $row) {
-                    if ($firstRow) {
-                        $firstRow = false;
-                        continue;
-                    }
-                    $rowData = [];
-                    foreach ($row->getCellIterator() as $cell) {
-                        $rowData[] = $cell->getValue();
-                    }
-                    
-                    // Get values from specified indexes
-                    $full_name = (isset($rowData[6]) ? $rowData[6] : '') . ' ' . (isset($rowData[5]) ? $rowData[5] : '');
-                    $beneficiaryName = isset($rowData[13]) ? $rowData[13] : '';
-                    $relationName = isset($rowData[14]) ? $rowData[14] : '';
-                    $cardNumber = isset($rowData[1]) ? $rowData[1] : '';
-                    
-                    // Construct shell command
-                    $command = escapeshellcmd("python generateCard.py") . " " . 
-                               escapeshellarg($full_name) . " " . 
-                               escapeshellarg($beneficiaryName) . " " . 
-                               escapeshellarg($relationName) . " " . 
-                               escapeshellarg($cardNumber);
-                    
-                    // Execute Python script
-                    $output = shell_exec($command);
-                    
-                    // Check for execution failure
-                    if ($output === null) {
-                        die("Error: Failed to execute Python script.");
-                    }
-                    
-                    // Process Python output
-                    $output = trim($output);
-                    $outputLines = explode("\n", $output);
-                    
-                    // Validate Python output
-                    if (count($outputLines) < 2) {
-                        die("Error: Python script did not return expected output.");
-                    }
-                    
-                    echo '<p><strong>Full Name:</strong> ' . htmlspecialchars(trim($full_name)) . '</p>';
-                    echo '<p><strong>Beneficiary Name:</strong> ' . htmlspecialchars(trim($beneficiaryName)) . '</p>';
-                    echo '<p><strong>Relation Name:</strong> ' . htmlspecialchars(trim($relationName)) . '</p>';
-                    echo '<p><strong>Card Number:</strong> ' . htmlspecialchars(trim($cardNumber)) . '</p>';
+    // Only execute when the 'Generate Card' button is clicked
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
+        $file = 'xlsx/sample.xlsx';
+        $outputDir = 'outputs/img/';
+
+        if (file_exists($file)) {
+            $spreadsheet = IOFactory::load($file);
+            $sheet = $spreadsheet->getActiveSheet();
+            $firstRow = true;
+
+            echo '<div class="card-container">';
+
+            foreach ($sheet->getRowIterator() as $row) {
+                if ($firstRow) {
+                    $firstRow = false;
+                    continue;
                 }
-                
+                $rowData = [];
+                foreach ($row->getCellIterator() as $cell) {
+                    $rowData[] = $cell->getValue();
+                }
+
+                // Extract values
+                $full_name = (isset($rowData[6]) ? $rowData[6] : '') . ' ' . (isset($rowData[5]) ? $rowData[5] : '');
+                $cardNumber = isset($rowData[1]) ? $rowData[1] : '';
+
+                // Extract last name in uppercase
+                $nameParts = explode(" ", trim($full_name));
+                $lastName = strtoupper(end($nameParts)); // Get the last element in the name
+
+                // Expected filenames
+                $frontImage = $outputDir . $lastName . "_" . $cardNumber . "front.png";
+                $backImage = $outputDir . $lastName . "_" . $cardNumber . "back.png";
+
+                // Run Python script
+                $command = escapeshellcmd("python generateCard.py") . " " . 
+                           escapeshellarg($full_name) . " " . 
+                           escapeshellarg($cardNumber);
+                shell_exec($command);
+
+                // Display images if they exist
+                echo '<div class="card">';
+                if (file_exists($frontImage)) {
+                    echo '<img src="' . htmlspecialchars($frontImage) . '" alt="Front of ' . htmlspecialchars($full_name) . '">';
+                } else {
+                    echo '<p>Front image not found</p>';
+                }
+
+                if (file_exists($backImage)) {
+                    echo '<img src="' . htmlspecialchars($backImage) . '" alt="Back of ' . htmlspecialchars($full_name) . '">';
+                } else {
+                    echo '<p>Back image not found</p>';
+                }
                 echo '</div>';
             }
+
+            echo '</div>';
+        } else {
+            echo "<p>Error: File not found.</p>";
         }
     }
     ?>
