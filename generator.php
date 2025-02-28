@@ -235,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     </script>
 </head>
 <body>
-<img src="logo.png" alt="Company Logo" class="logo">
+<img src="img/logo.png" alt="Company Logo" class="logo">
     <div class="container">
         <h1>Insurance Card Generator</h1>
         <p>Click the button below to generate insurance card.</p>
