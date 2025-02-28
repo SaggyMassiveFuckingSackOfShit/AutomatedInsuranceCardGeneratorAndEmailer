@@ -35,7 +35,7 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         front_image = Image.open(front_template_path)
         front_draw = ImageDraw.Draw(front_image)
         
-        front_draw.text(positions["fullName"], f"Full Name: {full_name}", fill=font_color, anchor=anchor, font=font)
+        front_draw.text(positions["fullName"], f"{full_name}", fill=font_color, anchor=anchor, font=font)
         front_draw.text(positions["cardNumber"], f"{card_number}", fill=font_color, anchor=anchor, font=font)
         front_draw.text(positions["date"], datetime.datetime.now().strftime("%m%d%Y") , fill=font_color, anchor=anchor, font=font)
         
@@ -48,7 +48,7 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         back_draw = ImageDraw.Draw(back_image)
         
 
-        back_draw.text(positions["beneficiaryName"], f"Beneficiary: {beneficiary_name}/{relation_name}", fill=font_color, anchor=anchor, font=font)
+        back_draw.text(positions["beneficiaryName"], f"{beneficiary_name}/{relation_name}", fill=font_color, anchor=anchor, font=font)
         
         # Save the back card
         back_output_path = os.path.join(output_dir, full_name.split().pop().upper() + "_" + card_number + "back.png")

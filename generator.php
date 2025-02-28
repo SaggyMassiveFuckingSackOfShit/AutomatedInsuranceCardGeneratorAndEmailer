@@ -67,6 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         if ($index === 0) continue;
         
         $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
+        $beneficiary_name = ($rowData[13] ?? '');
+        $relation_name = ($rowData[14] ?? '');
         $cardNumber = $rowData[1] ?? '';
         
         $nameParts = explode(" ", trim($full_name));
@@ -76,19 +78,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
         $featuresImage = 'templates/features_template.png';
         
-        $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($cardNumber);
+        $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
         shell_exec($command);
         
         if (!file_exists($frontImage) || !file_exists($backImage) || !file_exists($featuresImage)) {
             die("Error: Generated images not found.");
         }
 
-        $templateFile = 'template.docx';
+        $templateFile = 'templates/template.docx';
         if (!file_exists($templateFile)) {
             die("Error: Template file not found.");
         }
 
-        $updatedFile = "{$lastName}_{$cardNumber}.docx";
+        $updatedFile = "outputs/pdf/{$lastName}_{$cardNumber}.docx";
         copy($templateFile, $updatedFile);
 
         $templateProcessor = new TemplateProcessor($updatedFile);
@@ -114,11 +116,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             'ratio' => false
         ]);
 
-        $outputDoc = 'final_card.docx';
+        $outputDoc = "outputs/pdf/{$lastName}_{$cardNumber}.docx";
         $templateProcessor->saveAs($outputDoc);
         $updatedWordFile = $outputDoc;
         
-        convertDocxToPdf($updatedWordFile, __DIR__);
+        convertDocxToPdf($updatedWordFile, "outputs/pdf");
         $updatedPdfFile = str_replace('.docx', '.pdf', $updatedWordFile);
 
         if (!empty($updatedPdfFile) && file_exists($updatedPdfFile)) {
@@ -126,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         } else {
             die("Error: Failed to convert Word to PDF.");
         }
+        unlink($outputDoc);
     }
 }
 ?>
