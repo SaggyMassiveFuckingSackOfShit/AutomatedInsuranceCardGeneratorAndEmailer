@@ -142,18 +142,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             text-align: center;
             margin-top: 50px;
         }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
         .card {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
         }
         img {
-            max-width: 100%;
-            height: auto;
+            max-width: 300px;
             border-radius: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
