@@ -1,3 +1,7 @@
 outputs/img/*
 
 !outputs/img/.gitkeep
+
+outputs/pdf/*
+
+!outputs/pdf/.gitkeep
