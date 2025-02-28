@@ -15,10 +15,10 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
             raise FileNotFoundError("One or both card templates not found.")
         
         positions = {
-            "cardNumber"        : (350, 455),
-            "date"              : (850, 455),
-            "fullName"          : (350, 555),
-            "beneficiaryName"   : (410, 340),
+            "cardNumber"        : (205, 267),
+            "date"              : (500, 267),
+            "fullName"          : (205, 325),
+            "beneficiaryName"   : (385, 310),
         }
 
         font_path = "calibri.ttf"
@@ -26,7 +26,7 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         anchor = "mm"
 
         try:
-            font = ImageFont.truetype(font_path, 40)
+            font = ImageFont.truetype(font_path, 25)
         except IOError:
             print(f"Error: Font file '{font_path}' not found.")
             sys.exit(1)
@@ -35,12 +35,12 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         front_image = Image.open(front_template_path)
         front_draw = ImageDraw.Draw(front_image)
         
-        front_draw.text(positions["fullName"], f"{full_name}", fill=font_color, anchor=anchor, font=font)
+        front_draw.text(positions["fullName"], f"Full Name: {full_name}", fill=font_color, anchor=anchor, font=font)
         front_draw.text(positions["cardNumber"], f"{card_number}", fill=font_color, anchor=anchor, font=font)
         front_draw.text(positions["date"], datetime.datetime.now().strftime("%m%d%Y") , fill=font_color, anchor=anchor, font=font)
         
         # Save the front card
-        front_output_path = os.path.join(output_dir, full_name.split().pop().upper() + "_" + card_number + "_front.png")
+        front_output_path = os.path.join(output_dir, full_name.split().pop().upper() + "_" + card_number + "front.png")
         front_image.save(front_output_path)
         
         # Process back template
@@ -48,10 +48,10 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         back_draw = ImageDraw.Draw(back_image)
         
 
-        back_draw.text(positions["beneficiaryName"], f"{beneficiary_name}/{relation_name}", fill=font_color, anchor=anchor, font=font)
+        back_draw.text(positions["beneficiaryName"], f"Beneficiary: {beneficiary_name}/{relation_name}", fill=font_color, anchor=anchor, font=font)
         
         # Save the back card
-        back_output_path = os.path.join(output_dir, full_name.split().pop().upper() + "_" + card_number + "_back.png")
+        back_output_path = os.path.join(output_dir, full_name.split().pop().upper() + "_" + card_number + "back.png")
         back_image.save(back_output_path)
         
         print(front_output_path)
