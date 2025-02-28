@@ -139,54 +139,130 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            margin-top: 50px;
+            background: linear-gradient(135deg, #c25b18, #1d2b46);
+            color: white;
+            margin: 139px;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 5000px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+        }
+        .logo {
+            max-width: 550px;
+            display: block;
+            margin: 0 auto 0px;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        .btn-primary {
+            background: #c25b18;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 126, 179, 0.3);
+        }
+        .btn-danger {
+            background: #1d2b46;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 75, 92, 0.3);
+        }
+        .btn:hover {
+            transform: scale(1.1);
         }
         .card-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 20px;
             margin-top: 20px;
         }
         .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
         }
         img {
-            max-width: 300px;
-            border-radius: 10px;
-            margin-top: 10px;
+            max-width: 100%;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        .progress {
+            display: none;
+            margin-top: 20px;
+        }
+        .loading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c25b18;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
+    <script>
+        function showLoading() {
+            document.getElementById('progress').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-    <form method="post">
-        <button type="submit" name="generate">Generate Card</button>
-    </form>
-    
-    <div class="card-container">
-        <?php if (!empty($updatedWordFile)): ?>
-            <div class="card">
-                <h3>Generated Card:</h3>
-                <img src="<?php echo htmlspecialchars($frontImage); ?>" alt="Generated Card">
-                <h3 class="mt-4">Back of Card:</h3>
-                <img src="<?php echo htmlspecialchars($backImage); ?>" alt="Back of Card">
-            </div>
+<img src="logo.png" alt="Company Logo" class="logo">
+    <div class="container">
+        <h1>Insurance Card Generator</h1>
+        <p>Click the button below to generate insurance card.</p>
+        <form method="post" onsubmit="showLoading()">
+            <button type="submit" name="generate" class="btn btn-primary">
+                <i class="fa fa-id-card"></i> Generate Card
+            </button>
+            <button type="submit" name="reset" class="btn btn-danger">
+                <i class="fa fa-redo"></i> Reset
+            </button>
+        </form>
 
-            <div class="text-center mt-4">
-                <a href="<?php echo htmlspecialchars($updatedWordFile); ?>" class="btn btn-primary" download>Download Word File</a>
-                <a href="<?php echo htmlspecialchars($updatedPdfFile); ?>" class="btn btn-secondary" download>Download PDF</a>
-            </div>
-        <?php endif; ?>
+        <div id="progress" class="progress">
+            <p class="loading"><i class="fa fa-spinner fa-spin"></i> Generating card, please wait...</p>
+        </div>
+
+        <div class="card-container" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+            <?php if (!empty($updatedWordFile)): ?>
+                <div class="card">
+                    <h3>Generated Card:</h3>
+                    <img src="<?php echo htmlspecialchars($frontImage); ?>" alt="Generated Card">
+                    <h3 class="mt-4">Back of Card:</h3>
+                    <img src="<?php echo htmlspecialchars($backImage); ?>" alt="Back of Card">
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </body>
 </html>
+
