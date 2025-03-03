@@ -64,7 +64,7 @@ if (file_exists($file)) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     foreach ($data as $index => $rowData) {
-        if ($index === 0) continue;
+        if ($index === 0 || strtoupper($rowData[3]) === 'PHYSICAL') continue;
         
         $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
         $beneficiary_name = ($rowData[13] ?? '');
@@ -146,11 +146,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             text-align: center;
             background: linear-gradient(135deg, #c25b18, #1d2b46);
             color: white;
-            margin: 139px;
+            margin: 25px;
             overflow-x: hidden;
         }
         .container {
-            max-width: 5000px;
+            max-width: 600px;
             margin: auto;
             background: rgba(255, 255, 255, 0.15);
             padding: 30px;
@@ -158,12 +158,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             animation: fadeIn 1s ease-in-out;
-            position: relative;
-        }
-        .logo {
-            max-width: 550px;
-            display: block;
-            margin: 0 auto 0px;
         }
         .btn {
             padding: 12px 24px;
@@ -177,42 +171,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         .btn-primary {
             background: #c25b18;
             color: white;
-            box-shadow: 0 4px 10px rgba(255, 126, 179, 0.3);
         }
         .btn-danger {
             background: #1d2b46;
             color: white;
-            box-shadow: 0 4px 10px rgba(255, 75, 92, 0.3);
         }
         .btn:hover {
             transform: scale(1.1);
-        }
-        .card-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            text-align: center;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        img {
-            max-width: 100%;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-        img:hover {
-            transform: scale(1.05);
         }
         .progress {
             display: none;
@@ -223,46 +188,90 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             font-weight: bold;
             color: #c25b18;
         }
+        .progress-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar-fill {
+            width: 0%;
+            height: 10px;
+            background: #c25b18;
+            transition: width 1s ease-in-out;
+        }
+        .progress-text {
+            margin-top: 5px;
+            font-weight: bold;
+            color: white;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .drop-zone {
+            border: 2px dashed #fff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        .drop-zone:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .file-input {
+            display: none;
+        }
     </style>
     <script>
-        function showLoading() {
+        function startProgressBar() {
             document.getElementById('progress').style.display = 'block';
+            let progressBar = document.getElementById('progress-bar-fill');
+            let progressText = document.getElementById('progress-text');
+            let width = 0;
+            let interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    progressText.innerText = 'Completed!';
+                } else {
+                    width += 10;
+                    progressBar.style.width = width + '%';
+                    progressText.innerText = width + '%';
+                }
+            }, 500);
         }
     </script>
 </head>
 <body>
-<img src="img/logo.png" alt="Company Logo" class="logo">
+    <img src="img/logo.png" alt="Company Logo" class="logo">
     <div class="container">
         <h1>Insurance Card Generator</h1>
-        <p>Click the button below to generate insurance card.</p>
-        <form method="post" onsubmit="showLoading()">
+        <p>Upload an Excel file and generate insurance cards.</p>
+        
+        <form method="post" enctype="multipart/form-data" onsubmit="startProgressBar(); return validateFile(document.getElementById('excelFile').files[0])">
+            <div class="drop-zone" onclick="triggerFileInput()" ondrop="handleFileSelect(event)" ondragover="event.preventDefault()">
+                <p>Drag & Drop Excel file here or click to upload</p>
+                <input type="file" name="excelFile" id="excelFile" class="file-input" accept=".xls,.xlsx" onchange="handleFileSelect(event)">
+                <p id="fileName">No file selected</p>
+            </div>
             <button type="submit" name="generate" class="btn btn-primary">
                 <i class="fa fa-id-card"></i> Generate Card
             </button>
-            <button type="submit" name="reset" class="btn btn-danger">
+            <button type="reset" class="btn btn-danger" onclick="document.getElementById('fileName').innerText='No file selected'; document.getElementById('progress').style.display='none';">
                 <i class="fa fa-redo"></i> Reset
             </button>
         </form>
-
+        
         <div id="progress" class="progress">
             <p class="loading"><i class="fa fa-spinner fa-spin"></i> Generating card, please wait...</p>
-        </div>
-
-        <div class="card-container" style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
-            <?php if (!empty($updatedWordFile)): ?>
-                <div class="card">
-                    <h3>Generated Card:</h3>
-                    <img src="<?php echo htmlspecialchars($frontImage); ?>" alt="Generated Card">
-                    <h3 class="mt-4">Back of Card:</h3>
-                    <img src="<?php echo htmlspecialchars($backImage); ?>" alt="Back of Card">
-                </div>
-            <?php endif; ?>
+            <div class="progress-bar">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+            <p id="progress-text" class="progress-text">0%</p>
         </div>
     </div>
 </body>
 </html>
-
