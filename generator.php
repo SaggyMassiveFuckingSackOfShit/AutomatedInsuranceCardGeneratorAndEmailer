@@ -70,9 +70,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
 
     $totalRecords = count($data) - 1; // Exclude the header row
     $processed = 0;
+    file_put_contents('outputs/debug_totalRecords.log', "Total Records: " . $totalRecords . "\n", FILE_APPEND);
+
 
     foreach ($data as $index => $rowData) {
-        if ($index === 0 || strtoupper($rowData[3]) === 'PHYSICAL') continue;
+        if ($index === 0 || strtoupper($rowData[3] ?? '') === 'PHYSICAL' || empty($rowData[1] ?? '')) {
+            continue;
+            file_put_contents('outputs/debug_foreach.log', "Processing row $index\n", FILE_APPEND);
+
+        }
+        if ($index === 0 || strtoupper($rowData[3] ?? '') === 'PHYSICAL' || empty($rowData[1] ?? '')) {
+            file_put_contents('outputs/debug_skipped.log', "Skipped row $index: " . json_encode($rowData) . "\n", FILE_APPEND);
+            continue;
+        }
+        file_put_contents('outputs/debug_foreach.log', "Processing row $index\n", FILE_APPEND);
+        
 
         // Process each record
         $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
@@ -88,12 +100,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         $featuresImage = 'templates/features_template.png';
 
         $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
-        shell_exec($command);
+        file_put_contents('outputs/debug_python.log', "Running: $command\n", FILE_APPEND);
+        $output = shell_exec($command . " 2>&1");
+        file_put_contents('outputs/debug_python.log', "Output: $output\n", FILE_APPEND);
+        
+        if ($processed >= $totalRecords) {
+            file_put_contents('outputs/debug_progress.log', "Force setting progress to 100%\n", FILE_APPEND);
+            file_put_contents($progressFile, "100");
+        }
+        
 
         if (!file_exists($frontImage) || !file_exists($backImage) || !file_exists($featuresImage)) {
+            file_put_contents('outputs/debug_missing_images.log', "Missing images: $frontImage | $backImage | $featuresImage\n", FILE_APPEND);
             die("Error: Generated images not found.");
         }
-
+        
         $templateFile = 'templates/template.docx';
         if (!file_exists($templateFile)) {
             die("Error: Template file not found.");
@@ -129,11 +150,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         $templateProcessor->saveAs($outputDoc);
         convertDocxToPdf($outputDoc, "outputs/pdf");
         unlink($outputDoc);
+        unlink($frontImage);
+        unlink($backImage);
 
         // Update progress
         $processed++;
-        $progress = round(($processed / $totalRecords) * 100, 2);
+        $progress = ceil(($processed / $totalRecords) * 100);
+        
+        file_put_contents('outputs/debug_progress.log', "Processed: $processed / $totalRecords => $progress%\n", FILE_APPEND);
         file_put_contents($progressFile, $progress);
+        
+        
     }
 }
 
