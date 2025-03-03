@@ -63,24 +63,33 @@ if (file_exists($file)) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
+    $progressFile = "outputs/progress.txt";
+    
+    // Reset progress at the beginning of the process
+    file_put_contents($progressFile, "0");
+
+    $totalRecords = count($data) - 1; // Exclude the header row
+    $processed = 0;
+
     foreach ($data as $index => $rowData) {
         if ($index === 0 || strtoupper($rowData[3]) === 'PHYSICAL') continue;
-        
+
+        // Process each record
         $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
         $beneficiary_name = ($rowData[13] ?? '');
         $relation_name = ($rowData[14] ?? '');
         $cardNumber = $rowData[1] ?? '';
-        
+
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
-        
+
         $frontImage = "$outputDir{$lastName}_{$cardNumber}front.png";
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
         $featuresImage = 'templates/features_template.png';
-        
+
         $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
         shell_exec($command);
-        
+
         if (!file_exists($frontImage) || !file_exists($backImage) || !file_exists($featuresImage)) {
             die("Error: Generated images not found.");
         }
@@ -94,14 +103,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         copy($templateFile, $updatedFile);
 
         $templateProcessor = new TemplateProcessor($updatedFile);
-        
+
         $templateProcessor->setImageValue('image', [
             'path' => $frontImage,
             'width' => 600,
             'height' => 375,
             'ratio' => false
         ]);
-        
+
         $templateProcessor->setImageValue('image2', [
             'path' => $backImage,
             'width' => 600,
@@ -118,19 +127,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
 
         $outputDoc = "outputs/pdf/{$lastName}_{$cardNumber}.docx";
         $templateProcessor->saveAs($outputDoc);
-        $updatedWordFile = $outputDoc;
-        
-        convertDocxToPdf($updatedWordFile, "outputs/pdf");
-        $updatedPdfFile = str_replace('.docx', '.pdf', $updatedWordFile);
-
-        if (!empty($updatedPdfFile) && file_exists($updatedPdfFile)) {
-            $_SESSION['updatedPdfFile'] = $updatedPdfFile;
-        } else {
-            die("Error: Failed to convert Word to PDF.");
-        }
+        convertDocxToPdf($outputDoc, "outputs/pdf");
         unlink($outputDoc);
+
+        // Update progress
+        $processed++;
+        $progress = round(($processed / $totalRecords) * 100, 2);
+        file_put_contents($progressFile, $progress);
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -200,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             height: 10px;
             background: #c25b18;
             transition: width 1s ease-in-out;
-        }
+        }   
         .progress-text {
             margin-top: 5px;
             font-weight: bold;
@@ -226,24 +233,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
             display: none;
         }
     </style>
-    <script>
-        function startProgressBar() {
-            document.getElementById('progress').style.display = 'block';
-            let progressBar = document.getElementById('progress-bar-fill');
-            let progressText = document.getElementById('progress-text');
-            let width = 0;
-            let interval = setInterval(() => {
-                if (width >= 100) {
-                    clearInterval(interval);
-                    progressText.innerText = 'Completed!';
-                } else {
-                    width += 10;
-                    progressBar.style.width = width + '%';
-                    progressText.innerText = width + '%';
-                }
-            }, 500);
+<script>
+    function startProgressBar() {
+        document.getElementById('progress').style.display = 'block';
+        let progressBar = document.getElementById('progress-bar-fill');
+        let progressText = document.getElementById('progress-text');
+
+        // Reset UI before starting
+        progressBar.style.width = '0%';
+        progressText.innerText = '0%';
+
+        function fetchProgress() {
+            fetch('progress.php')
+                .then(response => response.json())
+                .then(data => {
+                    let progress = data.progress;
+                    progressBar.style.width = progress + '%';
+                    progressText.innerText = progress + '%';
+
+                    if (progress < 100) {
+                        setTimeout(fetchProgress, 1000);
+                    } else {
+                        progressText.innerText = 'Completed!';
+                    }
+                })
+                .catch(error => console.error('Error fetching progress:', error));
         }
-    </script>
+
+        fetchProgress();
+    }
+</script>
+
+
 </head>
 <body>
     <img src="img/logo.png" alt="Company Logo" class="logo">
