@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
 
         // Update progress
         $processed++;
-        $progress = ceil(($processed / $totalRecords) * 100);
+        $progress = ceil(($processed / ($totalRecords-1)) * 100);
         
         file_put_contents('outputs/debug_progress.log', "Processed: $processed / $totalRecords => $progress%\n", FILE_APPEND);
         file_put_contents($progressFile, $progress);
@@ -272,19 +272,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
 
         function fetchProgress() {
             fetch('progress.php')
-                .then(response => response.json())
-                .then(data => {
-                    let progress = data.progress;
-                    progressBar.style.width = progress + '%';
-                    progressText.innerText = progress + '%';
+            .then(response => response.json())
+            .then(data => {
+                let progress = data.progress;
+                let progressBar = document.getElementById('progress-bar-fill');
+                let progressText = document.getElementById('progress-text');
 
-                    if (progress < 100) {
-                        setTimeout(fetchProgress, 1000);
-                    } else {
+                progressBar.style.width = progress + '%';
+                progressText.innerText = progress + '%';
+
+                if (progress < 100) {
+                    setTimeout(fetchProgress, 1000);
+                } else {
+                    setTimeout(() => {
+                        progressBar.style.width = '100%';
                         progressText.innerText = 'Completed!';
-                    }
-                })
-                .catch(error => console.error('Error fetching progress:', error));
+                    }, 500);  // Small delay to ensure the UI updates
+                }
+            })
+            .catch(error => console.error('Error fetching progress:', error));
         }
 
         fetchProgress();
