@@ -272,25 +272,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
 
         function fetchProgress() {
             fetch('progress.php')
-            .then(response => response.json())
-            .then(data => {
-                let progress = data.progress;
-                let progressBar = document.getElementById('progress-bar-fill');
-                let progressText = document.getElementById('progress-text');
+                .then(response => response.json())
+                .then(data => {
+                    let progress = data.progress;
+                    progressBar.style.width = progress + '%';
+                    progressText.innerText = progress + '%';
 
-                progressBar.style.width = progress + '%';
-                progressText.innerText = progress + '%';
-
-                if (progress < 100) {
-                    setTimeout(fetchProgress, 1000);
-                } else {
-                    setTimeout(() => {
-                        progressBar.style.width = '100%';
+                    if (progress < 100) {
+                        setTimeout(fetchProgress, 1000);
+                    } else {
                         progressText.innerText = 'Completed!';
-                    }, 500);  // Small delay to ensure the UI updates
-                }
-            })
-            .catch(error => console.error('Error fetching progress:', error));
+                    }
+                })
+                .catch(error => console.error('Error fetching progress:', error));
         }
 
         fetchProgress();
