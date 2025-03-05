@@ -4,8 +4,8 @@ session_start();
 // One-time first access code (fixed)
 $first_access_code = "asdasd23323212845";
 
-// Set access timeout (2 hours)
-$access_timeout = 2 * 60 * 60;
+// Set access timeout (8 hours)
+$access_timeout = 8 * 60 * 60;
 
 // Default code to use after session timeout
 $default_code = "bewiser123";

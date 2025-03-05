@@ -1,215 +1,104 @@
-<?php require 'generator.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Card</title>
+    <title>Modern Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             text-align: center;
             background: linear-gradient(135deg, #c25b18, #1d2b46);
             color: white;
-            margin: 25px;
+            margin: 0;
+            padding: 0;
             overflow-x: hidden;
         }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            animation: fadeIn 1s ease-in-out;
-        }
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            margin: 5px;
-        }
-        .btn-primary {
-            background: #c25b18;
-            color: white;
-        }
-        .btn-danger {
-            background: #1d2b46;
-            color: white;
-        }
-        .btn:hover {
-            transform: scale(1.1);
-        }
-        .progress {
-            display: none;
-            margin-top: 20px;
-        }
-        .loading {
-            font-size: 18px;
-            font-weight: bold;
-            color: #c25b18;
-        }
-        .progress-bar {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .progress-bar-fill {
-            width: 0%;
-            height: 10px;
-            background: #c25b18;
-            transition: width 1s ease-in-out;
-        }   
-        .progress-text {
-            margin-top: 5px;
-            font-weight: bold;
-            color: white;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .drop-zone {
-            border: 2px dashed #fff;
-            padding: 20px;
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+        .logo {
+            width: 550px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            max-width: 80%;
+        }
+        .access-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .access-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
             cursor: pointer;
-            border-radius: 10px;
-            margin: 20px 0;
             transition: background 0.3s;
         }
-        .drop-zone:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .access-btn:hover {
+            background: #ff4757;
         }
-        .file-input {
-            display: none;
+        .credits {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        .credits a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .credits a:hover {
+            text-decoration: underline;
         }
     </style>
-<script>
-    function startProgressBar() {
-        document.getElementById('progress').style.display = 'block';
-        let progressBar = document.getElementById('progress-bar-fill');
-        let progressText = document.getElementById('progress-text');
-
-        // Reset UI before starting
-        progressBar.style.width = '0%';
-        progressText.innerText = '0%';
-
-        function fetchProgress() {
-            fetch('progress.php')
-                .then(response => response.json())
-                .then(data => {
-                    let progress = data.progress;
-                    let progressBar = document.getElementById('progress-bar-fill');
-                    let progressText = document.getElementById('progress-text');
-
-                    progressBar.style.width = progress + '%';
-                    progressText.innerText = progress + '%';
-
-                    if (progress < 100) {
-                        setTimeout(fetchProgress, 1000);
-                    } else {
-                    setTimeout(() => {
-                        progressBar.style.width = '100%';
-                        progressText.innerText = 'Completed!';
-                    }, 1000);  // Small delay to ensure the UI updates
-                    }
-                })
-                .catch(error => console.error('Error fetching progress:', error));
-        }
-
-        fetchProgress();
-    }
-
-    function handleFileSelect(event) {
-            event.preventDefault();
-            document.getElementById("drop-area").classList.remove("hover");
-
-            let files = event.dataTransfer.files; // Get dropped files
-
-            if (files.length === 0) {
-                alert("No valid file detected.");
-                return;
-            }
-
-            let file = files[0]; // Handle the first file only
-            console.log("Dropped file:", file.name, file.type);
-
-            // Ensure it's a valid file (not a web URL or shortcut)
-            if (!file.type || file.size === 0) {
-                alert("Invalid file. Please drag a real file, not a shortcut or web link.");
-                return;
-            }
-
-            let formData = new FormData();
-            formData.append("file", file);
-
-            fetch("upload.php", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => alert(data)) // Display server response
-            .catch(error => console.error("Error:", error));
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const uploadButton = document.getElementById('drop-area');
-            const fileInput = document.getElementById('fileInput');
-            const fileNameDisplay = document.getElementById('fileName');
-
-            uploadButton.addEventListener('click', function() {
-                fileInput.click();
-            });
-
-            fileInput.addEventListener('change', function(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    fileNameDisplay.textContent = 'Selected file: ' + file.name;
-                }
-            });
-        });
-
-    
-</script>
-
 </head>
-    <body>
-        <img src="img/logo.png" alt="Company Logo" class="logo">
-        <div class="container">
-            <h1>Insurance Card Generator</h1>
-            <p>Upload an Excel file and generate insurance cards.</p>
-            
-            <input type="file" id="fileInput" style="display: none;">
-
-            <form method="post" enctype="multipart/form-data" onsubmit="startProgressBar(); return validateFile(document.getElementById('excelFile').files[0])">
-                <div class="drop-zone" id = "drop-area" ondrop="handleFileSelect(event)" ondragover="event.preventDefault()">
-                    <p>Drag & Drop Excel file here or click to upload</p>
-                    <input type="file" name="excelFile" id="excelFile" class="file-input" accept=".xls,.xlsx" onchange="handleFileSelect(event)">
-                    <p id="fileName">No file selected</p>
-                </div>
-                <button type="submit" name="generate" class="btn btn-primary">
-                    <i class="fa fa-id-card"></i> Generate Card
-                </button>
-                <button type="reset" class="btn btn-danger" onclick="document.getElementById('fileName').innerText='No file selected'; document.getElementById('progress').style.display='none';">
-                    <i class="fa fa-redo"></i> Reset
-                </button>
-            </form>
-            
-            <div id="progress" class="progress">
-                <p class="loading"><i class="fa fa-spinner fa-spin"></i> Generating card, please wait...</p>
-                <div class="progress-bar">
-                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
-                </div>
-                <p id="progress-text" class="progress-text">0%</p>
-            </div>
-        </div>
-    </body>
+<body>
+    <header class="hero">
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <h1 class="title">Welcome to Our System</h1>
+        <p class="subtitle">Revolutionizing the way you manage insurance cards</p>
+        <section class="access-section">
+            <p>Access the admin page with an access code to continue.</p>
+            <button class="access-btn" onclick="window.location.href='homepagev2.php'">Enter Access Code</button>
+        </section>
+    </header>
+    
+    <footer class="credits">
+        <p>Developed by <a href="#">Team STI</a></p>
+    </footer>
+    
+    <script>
+        gsap.from(".logo", { duration: 1.5, y: -50, opacity: 0, ease: "bounce" });
+        gsap.from(".title", { duration: 1.5, y: -50, opacity: 0, ease: "bounce" });
+        gsap.from(".subtitle", { duration: 1.5, delay: 0.5, y: 50, opacity: 0 });
+        gsap.from(".access-section", { duration: 1, opacity: 0, y: 30 });
+    </script>
+</body>
 </html>

@@ -6,23 +6,1027 @@ Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669
 Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
 outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
 
-Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 -1213"
-Output: outputs/img\VINOYA_ST 7669 0924 0000 -1213front.png
-outputs/img\VINOYA_ST 7669 0924 0000 -1213back.png
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
 
-Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 -2427"
-Output: outputs/img\DESIDERIO_ST 7669 0924 0000 -2427front.png
-outputs/img\DESIDERIO_ST 7669 0924 0000 -2427back.png
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
 
-Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 -3641"
-Output: outputs/img\VINOYA_ST 7669 0924 0000 -3641front.png
-outputs/img\VINOYA_ST 7669 0924 0000 -3641back.png
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
 
-Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 -4855"
-Output: outputs/img\DESIDERIO_ST 7669 0924 0000 -4855front.png
-outputs/img\DESIDERIO_ST 7669 0924 0000 -4855back.png
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
 
-Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 -6069"
-Output: outputs/img\VINOYA_ST 7669 0924 0000 -6069front.png
-outputs/img\VINOYA_ST 7669 0924 0000 -6069back.png
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0002front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0003front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Kenneth Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
+
+Running: python generateCard.py "Cedrick Anne  Vinoya " "Ann Michel Pascual " "Mother " "ST 7669 0924 0000 1215"
+Output: outputs/img\VINOYA_ST 7669 0924 0000 1215front.png
+outputs/img\VINOYA_ST 7669 0924 0000 1215back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "REL" "ST 7669 0924 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7669 0924 0000 0001front.png
+outputs/img\DESIDERIO_ST 7669 0924 0000 0001back.png
+
+Running: python generateCard.py "Mike Tallada" "Mike Tallada" "REL" "ST 7669 0924 0000 0002"
+Output: outputs/img\TALLADA_ST 7669 0924 0000 0002front.png
+outputs/img\TALLADA_ST 7669 0924 0000 0002back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0003"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0003front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0003back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0004"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0004front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0004back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0005"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0005front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0005back.png
+
+Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 0924 0000 0006"
+Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
+outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
 
