@@ -221,10 +221,10 @@ $(document).ready(function() {
 <body class="hold-transition sidebar-mini">
     <?php if (!$access_granted): ?>
         <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75 z-50">
-            <form method="post" class="p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
+            <form method="post" class="p-6 bg-gray-800 text-black rounded-lg shadow-lg text-center">
                 <h2 class="text-2xl font-bold mb-4">Enter Access Code</h2>
                 <?php if (isset($error)) echo "<p class='text-red-500'>$error</p>"; ?>
-                <input type="password" name="access_code" class="px-4 py-2 border rounded mb-4 w-full text-center bg-gray-700 text-white" required>
+                <input type="password" name="access_code" class="px-4 py-2 border rounded mb-4 w-full text-center bg-gray-700 text-black" required>
                 <button type="submit" class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">Submit</button>
             </form>
         </div>
