@@ -1,82 +1,40 @@
 <?php
 session_start();
 
-// One-time first access code (fixed)
-$first_access_code = "asdasd23323212845";
+// Default access code (fixed)
+$access_code = "bewiser123";
 
 // Set access timeout (8 hours)
 $access_timeout = 8 * 60 * 60;
 
-// Default code to use after session timeout
-$default_code = "bewiser123";
-
-// Function to generate a random 6-digit access code
-function generateAccessCode() {
-    return str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
+// Function to check if the access code is correct
+function isAccessCodeValid($input_code) {
+    global $access_code;
+    return $input_code === $access_code;
 }
 
-// File to store the generated codes
-$codeFile = 'access_codes.txt';
+// Load the access time from the session or set default
+$access_time = $_SESSION['access_time'] ?? time();
 
-// Function to load the codes from the file
-function loadCodes($codeFile) {
-    if (file_exists($codeFile)) {
-        $data = file_get_contents($codeFile);
-        return json_decode($data, true);
-    }
-    return null;
-}
-
-// Function to save the codes to the file
-function saveCodes($codeFile, $codes) {
-    file_put_contents($codeFile, json_encode($codes));
-}
-
-// Load the existing codes from the file (if any)
-$codes = loadCodes($codeFile);
-
-// If there are no codes in the file, initialize them
-if (!$codes) {
-    $codes = [
-        'current_code' => $first_access_code,
-        'next_code' => generateAccessCode(),
-        'access_time' => time(),
-    ];
-    saveCodes($codeFile, $codes);
+// Check if session has expired
+if ((time() - $access_time) > $access_timeout) {
+    // Session expired, reset session and save the default code
+    session_unset();
+    session_destroy();
+    
+    // Redirect user to re-enter code
+    header("Location: index.php");
+    exit();
 }
 
 // Handle form submission for access code
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['access_code'])) {
-    if ($_POST['access_code'] === $codes['current_code']) {
+    if (isAccessCodeValid($_POST['access_code'])) {
         $_SESSION['access_granted'] = true;
-        $codes['access_time'] = time();
-        
-        // Update access codes for next session
-        $codes['current_code'] = $codes['next_code']; // Use next code
-        $codes['next_code'] = generateAccessCode(); // Generate new next code
-        
-        // Save updated codes to file
-        saveCodes($codeFile, $codes);
+        $_SESSION['access_time'] = time(); // Reset the access time on successful login
     } else {
         $error = "Invalid access code.";
     }
-}
-
-// Check if session has expired
-if (isset($codes['access_time']) && (time() - $codes['access_time']) > $access_timeout) {
-    // Session expired, reset session and save the default code
-    session_unset();
-    session_destroy();
-
-    // Save default code to the file after timeout
-    $codes['current_code'] = $default_code;
-    $codes['next_code'] = generateAccessCode(); // Generate new next code
-    $codes['access_time'] = time(); // Reset the access time
-    
-    saveCodes($codeFile, $codes);
-    
-    header("Location: index.php"); // Redirect user to re-enter code
-    exit();
 }
 
 $access_granted = $_SESSION['access_granted'] ?? false;
@@ -238,7 +196,7 @@ $(document).ready(function() {
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index.php" class="nav-link">Home</a>
+                    <a href="index.php" class="nav-link">Logout</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <span class="nav-link">Session Expires In: <span id="timer"></span></span>
