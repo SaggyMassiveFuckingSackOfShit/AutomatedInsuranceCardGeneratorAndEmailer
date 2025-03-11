@@ -5,3 +5,13 @@ outputs/img/*
 outputs/pdf/*
 
 !outputs/pdf/.gitkeep
+
+!outputs/debug_email_error.log
+
+!outputs/debug_progress.log
+
+!outputs/debug_python.log
+
+!utputs/debug_totalRecords.log
+
+!outputs/progress.txt

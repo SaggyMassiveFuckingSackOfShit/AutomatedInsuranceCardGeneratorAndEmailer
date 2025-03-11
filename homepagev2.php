@@ -2,7 +2,7 @@
 session_start();
 
 // Default access code (fixed)
-$access_code = "bewiser123";
+$access_code = "123";
 
 // Set access timeout (8 hours)
 $access_timeout = 8 * 60 * 60;
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['access_code'])) {
     }
 }
 
+
 $access_granted = $_SESSION['access_granted'] ?? false;
 ?>
 
@@ -55,43 +56,43 @@ $access_granted = $_SESSION['access_granted'] ?? false;
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
 
     <script>
-$(document).ready(function() {
-    $("#generateForm").submit(function(event) {
-        event.preventDefault(); // Prevent full page refresh
+        $(document).ready(function() {
+            $("#generateForm").submit(function(event) {
+            event.preventDefault(); // Prevent full page refresh
 
-        let formData = new FormData(this);
+            let formData = new FormData(this);
 
-        $("#progress").show(); // Show progress bar
-        $("#progress-bar-fill").css("width", "0%"); // Reset progress bar
-        $("#progress-text").text("0%");
+            $("#progress").show(); // Show progress bar
+            $("#progress-bar-fill").css("width", "0%"); // Reset progress bar
+            $("#progress-text").text("0%");
 
-        $.ajax({
-            url: "generator.php", // Update with the correct backend script
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-            xhr: function() {
-                let xhr = new window.XMLHttpRequest();
-                xhr.upload.addEventListener("progress", function(evt) {
-                    if (evt.lengthComputable) {
-                        let percentComplete = (evt.loaded / evt.total) * 100;
-                        $("#progress-bar-fill").css("width", percentComplete + "%");
-                        $("#progress-text").text(Math.round(percentComplete) + "%");
-                    }
-                }, false);
-                return xhr;
-            },
-            success: function(response) {
-                $("#progress-text").text("Completed!");
-                alert("Generation Successful!");
-            },
-            error: function() {
-                alert("Error generating card.");
-            }
+            $.ajax({
+                url: "generator.php", // Update with the correct backend script
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                xhr: function() {
+                    let xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+                            let percentComplete = (evt.loaded / evt.total) * 100;
+                            $("#progress-bar-fill").css("width", percentComplete + "%");
+                            $("#progress-text").text(Math.round(percentComplete) + "%");
+                        }
+                    }, false);
+                    return xhr;
+                },
+                success: function(response) {
+                    $("#progress-text").text("Completed!");
+                    alert("Generation Successful!");
+                },
+                error: function() {
+                    alert("Error generating card.");
+                }
+            });
+             });
         });
-    });
-});
 
         function updateTimer() {
             let timeout = <?php echo ($_SESSION['access_time'] + $access_timeout) - time(); ?>;
@@ -109,16 +110,16 @@ $(document).ready(function() {
         window.onload = updateTimer;
 
         function loadPage(page, event) {
-    event.preventDefault(); // Prevent page reload
-    $(".nav-link").removeClass("active"); // Remove active class sa ibang items
-    event.target.closest("a").classList.add("active"); // Highlight selected menu
+            event.preventDefault(); // Prevent page reload
+            $(".nav-link").removeClass("active"); // Remove active class sa ibang items
+            event.target.closest("a").classList.add("active"); // Highlight selected menu
 
-    $("#content-area").fadeOut(200, function() { // Smooth fade effect
-        $(this).load(page, function() {
-            $(this).fadeIn(200);
-        });
-    });
-}
+            $("#content-area").fadeOut(200, function() { // Smooth fade effect
+                $(this).load(page, function() {
+                    $(this).fadeIn(200);
+                });
+            });
+        }
 
     </script>
 
@@ -182,7 +183,7 @@ $(document).ready(function() {
             <form method="post" class="p-6 bg-gray-800 text-white rounded-lg shadow-lg text-center">
                 <h2 class="text-2xl font-bold mb-4">Enter Access Code</h2>
                 <?php if (isset($error)) echo "<p class='text-red-500'>$error</p>"; ?>
-                <input type="password" name="access_code" class="px-4 py-2 border rounded mb-4 w-full text-center bg-gray-700 text-white" required>
+                <input type="password" name="access_code" class="px-4 py-2 border rounded mb-4 w-full text-center bg-gray-700 text-black" required>
                 <button type="submit" class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">Submit</button>
             </form>
         </div>
@@ -218,7 +219,7 @@ $(document).ready(function() {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="generator.php" class="nav-link" target="_blank">
+                            <a href="generator.php" class="nav-link" onclick="loadPage('generator.php', event)">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>Card Generator</p>
                             </a>

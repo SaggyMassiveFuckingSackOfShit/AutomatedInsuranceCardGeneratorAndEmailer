@@ -80,14 +80,6 @@ function sendEmail($recipientEmail, $filePath) {
     <h3 class="text-center text-white">Upload File and Send via Email</h3>
     <div class="card p-4">
         <form id="uploadForm" onsubmit="uploadFile(event)">
-            <div class="mb-3">
-                <label class="form-label">Choose File</label>
-                <input type="file" class="form-control" name="pdfFile" accept=".pdf" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Enter recipient email</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter recipient email" required>
-            </div>
             <button type="submit" class="btn btn-danger w-100">Submit</button>
         </form>
 
@@ -103,6 +95,7 @@ function sendEmail($recipientEmail, $filePath) {
 </div>
 
 <script>
+
 function uploadFile(event) {
     event.preventDefault();
     let formData = new FormData(document.getElementById("uploadForm"));
