@@ -32,17 +32,26 @@ function convertDocxToPdf($inputFile, $outputDir) {
 }
 
 
-// Example usage
-$uploadDir = "uploads/";
-$latestFileInfo = getLatestUploadedFile($uploadDir);
+function getLatestUploadedFile($uploadDir) {
+    if (!is_dir($uploadDir)) {
+        return "Error: Directory does not exist.";
+    }
 
-if (is_array($latestFileInfo)) {
-    echo "Directory: " . $latestFileInfo['directory'] . "<br>";
-    echo "Filename: " . $latestFileInfo['filename'] . "<br>";
-} else {
-    echo $latestFileInfo; // Error message
+    $files = glob($uploadDir . '*'); // Get all files in the directory
+    if (!$files) {
+        return "Error: No files found in directory.";
+    }
+
+    // Sort files by modification time (newest first)
+    usort($files, function($a, $b) {
+        return filemtime($b) - filemtime($a);
+    });
+
+    // Get the most recent file
+    $latestFile = $files[0];
+    
+    return $latestFile;
 }
-
 
 function loadExcelData($file) {
     if (!file_exists($file)) {
@@ -76,7 +85,7 @@ function generateCards($data, $outputDir) {
         $beneficiary_name = ($rowData[13] ?? '');
         $relation_name = ($rowData[14] ?? '');
         $cardNumber = $rowData[1] ?? '';
-        $email = $rowData[2] ?? ''; // Assuming the email is in column 2
+        $email = $rowData[12] ?? '';
 
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
