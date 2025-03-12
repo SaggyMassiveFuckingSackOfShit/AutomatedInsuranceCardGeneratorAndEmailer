@@ -7,7 +7,6 @@ require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpWord\TemplateProcessor;
 
-
 // Function to convert DOCX to PDF using LibreOffice
 function convertDocxToPdf($inputFile, $outputDir) {
     $libreOfficePath = 'C:\\Program Files\\LibreOffice\\program\\soffice.exe';
@@ -33,23 +32,25 @@ function convertDocxToPdf($inputFile, $outputDir) {
 }
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["reset"])) {
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
+// Example usage
+$uploadDir = "uploads/";
+$latestFileInfo = getLatestUploadedFile($uploadDir);
+
+if (is_array($latestFileInfo)) {
+    echo "Directory: " . $latestFileInfo['directory'] . "<br>";
+    echo "Filename: " . $latestFileInfo['filename'] . "<br>";
+} else {
+    echo $latestFileInfo; // Error message
 }
 
-$updatedWordFile = '';
-$updatedPdfFile = '';
 
-$file = 'xlsx/sample.xlsx';
-$outputDir = 'outputs/img/';
-
-$data = [];
-
-if (file_exists($file)) {
+function loadExcelData($file) {
+    if (!file_exists($file)) {
+        die("Error: File not found.");
+    }
     $spreadsheet = IOFactory::load($file);
     $sheet = $spreadsheet->getActiveSheet();
-    
+    $data = [];
     foreach ($sheet->getRowIterator() as $row) {
         $rowData = [];
         foreach ($row->getCellIterator() as $cell) {
@@ -57,34 +58,19 @@ if (file_exists($file)) {
         }
         $data[] = $rowData;
     }
-} else {
-    die("Error: File not found.");
+    return $data;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
+function generateCards($data, $outputDir) {
     $progressFile = "outputs/progress.txt";
-    
-    // Reset progress at the beginning of the process
     file_put_contents($progressFile, "0");
-
-    $totalRecords = count($data) - 1; // Exclude the header row
+    $totalRecords = count($data) - 1;
     $processed = 0;
-    file_put_contents('outputs/debug_totalRecords.log', "Total Records: " . $totalRecords . "\n", FILE_APPEND);
-
 
     foreach ($data as $index => $rowData) {
         if ($index === 0 || strtoupper($rowData[3] ?? '') === 'PHYSICAL' || empty($rowData[1] ?? '')) {
             continue;
-            file_put_contents('outputs/debug_foreach.log', "Processing row $index\n", FILE_APPEND);
-
         }
-        if ($index === 0 || strtoupper($rowData[3] ?? '') === 'PHYSICAL' || empty($rowData[1] ?? '')) {
-            file_put_contents('outputs/debug_skipped.log', "Skipped row $index: " . json_encode($rowData) . "\n", FILE_APPEND);
-            continue;
-        }
-        file_put_contents('outputs/debug_foreach.log', "Processing row $index\n", FILE_APPEND);
-        
-
         // Process each record
         $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
         $beneficiary_name = ($rowData[13] ?? '');
@@ -166,6 +152,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     }
 }
 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
+    if (isset($_FILES["excelFile"]) && $_FILES["excelFile"]["error"] === UPLOAD_ERR_OK) {
+        $uploadDir = "uploads/";
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+        $uploadedFile = $uploadDir . basename($_FILES["excelFile"]["name"]);
+
+        if (move_uploaded_file($_FILES["excelFile"]["tmp_name"], $uploadedFile)) {
+            $data = loadExcelData($uploadedFile);
+            generateCards($data, 'outputs/img/');
+        } else {
+            die("Error moving uploaded file.");
+        }
+    } else {
+        echo "Upload error code: " . ($_FILES["excelFile"]["error"] ?? "No file uploaded");
+    }
+}
 
 ?>
 
@@ -263,6 +268,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         }
     </style>
 <script>
+    function openFileExplorer() {
+        document.getElementById('fileInput').click();
+    }
+    function displayFileName() {
+        const fileInput = document.getElementById('fileInput');
+        const fileNameDisplay = document.getElementById('fileName');
+
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const fileType = file.name.split('.').pop().toLowerCase();
+
+            if (fileType === "xlsx" || fileType === "xls") {
+                fileNameDisplay.textContent = "Selected file: " + file.name;
+                uploadFile(file);
+            } else {
+                fileNameDisplay.textContent = "Invalid file type. Please select an Excel file.";
+                fileInput.value = "";
+            }
+        } else {
+            fileNameDisplay.textContent = "No file selected";
+        }
+    }
+    function uploadFile(file) {
+        let formData = new FormData();
+        formData.append("excelFile", file);
+
+        fetch("upload.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => console.error("Error uploading file:", error));
+    }
     function startProgressBar() {
         document.getElementById('progress').style.display = 'block';
         let progressBar = document.getElementById('progress-bar-fill');
@@ -302,18 +343,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
         <p>Upload an Excel file and generate insurance cards.</p>
         
         <form method="post" enctype="multipart/form-data" onsubmit="startProgressBar(); return validateFile(document.getElementById('excelFile').files[0])">
-            <div class="drop-zone" onclick="triggerFileInput()" ondrop="handleFileSelect(event)" ondragover="event.preventDefault()">
-                <p>Drag & Drop Excel file here or click to upload</p>
-                <input type="file" name="excelFile" id="excelFile" class="file-input" accept=".xls,.xlsx" onchange="handleFileSelect(event)">
+            <div class="drop-zone" onclick="openFileExplorer()" ondrop="handleFileSelect(event)" ondragover="event.preventDefault()">
+                <p>Click to upload</p>
+
+                <input type="file" id="excelFile" name="excelFile" accept=".xlsx,.xls" style="display: none;" onchange="displayFileName()">
                 <p id="fileName">No file selected</p>
             </div>
             <button type="submit" name="generate" class="btn btn-primary">
                 <i class="fa fa-id-card"></i> Generate Card
             </button>
-            <button type="reset" class="btn btn-danger" onclick="document.getElementById('fileName').innerText='No file selected'; document.getElementById('progress').style.display='none';">
+            <button type="reset" class="btn btn-danger" onclick="resetForm()">
                 <i class="fa fa-redo"></i> Reset
             </button>
         </form>
+
+<script>
+function openFileExplorer() {
+    document.getElementById("excelFile").click();
+}
+
+function displayFileName() {
+    let fileInput = document.getElementById("excelFile");
+    let fileName = document.getElementById("fileName");
+    fileName.innerText = fileInput.files.length > 0 ? fileInput.files[0].name : "No file selected";
+}
+
+function resetForm() {
+    document.getElementById("fileName").innerText = "No file selected";
+    document.getElementById("progress").style.display = "none";
+}
+</script>
+
         
         <div id="progress" class="progress">
             <p class="loading"><i class="fa fa-spinner fa-spin"></i> Generating card, please wait...</p>

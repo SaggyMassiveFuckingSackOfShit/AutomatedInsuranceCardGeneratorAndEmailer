@@ -86,7 +86,7 @@
         <p class="subtitle">Revolutionizing the way you manage insurance cards</p>
         <section class="access-section">
             <p>Access the admin page with an access code to continue.</p>
-            <button class="access-btn" onclick="window.location.href='homepagev2.php'">Enter Access Code</button>
+            <button class="access-btn" onclick="window.location.href='home.php'">Enter Access Code</button>
         </section>
     </header>
     

@@ -58,8 +58,29 @@ function findEmailByCardNumber($data, $cardNumber) {
     return null;
 }
 
+function getLatestUploadedFile($uploadDir) {
+    if (!is_dir($uploadDir)) {
+        return "Error: Directory does not exist.";
+    }
+
+    $files = glob($uploadDir . '*'); // Get all files in the directory
+    if (!$files) {
+        return "Error: No files found in directory.";
+    }
+
+    // Sort files by modification time (newest first)
+    usort($files, function($a, $b) {
+        return filemtime($b) - filemtime($a);
+    });
+
+    // Get the most recent file
+    $latestFile = $files[0];
+    
+    return $latestFile;
+}
+
 function processFiles() {
-    $excelFile = "xlsx/sample.xlsx";
+    $excelFile = getLatestUploadedFile('uploads/');
     $files = getFiles();
     $data = readExcelData($excelFile);
     $result = [];
@@ -145,7 +166,7 @@ function sendEmails($fileEmailDict) {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(90deg, #c25b18, #2a5298);
         }
 
         /* Card Container */
