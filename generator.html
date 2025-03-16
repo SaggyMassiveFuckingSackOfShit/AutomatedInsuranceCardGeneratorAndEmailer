@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <img src="img/logo.png" alt="Company Logo" class="logo">
+    <div class="container">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="drop-zone" onclick="document.getElementById('excelFile').click()" 
+                ondrop="handleFileSelect(event)" ondragover="event.preventDefault()">
+                <p>Click to upload</p>
+                <input type="file" id="excelFile" name="excelFile" accept=".xlsx,.xls" style="display: none;" onchange="displayFileName()">
+                <p id="fileName">No file selected</p>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-id-card"></i> Generate Card
+            </button>
+            
+            <button type="reset" class="btn btn-danger" onclick="resetForm()">
+                <i class="fa fa-redo"></i> Reset
+            </button>
+        </form>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" style="display: none;">
+            <p>Processing: <span id="progressText">0%</span></p>
+            <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+
+        <!-- Response Message -->
+        <div id="responseMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
