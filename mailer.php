@@ -25,6 +25,7 @@ function getFiles() {
 function extractCardNumber($filename) {
     $parts = explode('_', $filename);
     if (count($parts) > 1) {
+        echo $parts[1];
         return str_replace('.pdf', '', $parts[1]);
     }
     return null;
@@ -52,7 +53,7 @@ function readExcelData($file) {
 function findEmailByCardNumber($data, $cardNumber) {
     foreach ($data as $row) {
         if (!empty($row[1]) && $row[1] == $cardNumber) {
-            return $row[12] ?? null;
+            return $row[18] ?? null;
         }
     }
     return null;
@@ -98,8 +99,11 @@ function processFiles() {
 }
 
 function sendEmails($fileEmailDict) {
+    $i = 0;
     $successMessages = [];
     foreach ($fileEmailDict as $filename => $email) {
+        echo $successMessages[$i];
+        $I++;
         echo "<script>updateStatus('Sending email to $email...');</script>";
         flush();
         ob_flush();

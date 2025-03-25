@@ -6,7 +6,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def generate_card(full_name, beneficiary_name, relation_name, card_number):
-           
     try:
         # Load the card templates
         front_template_path = "templates/front_template.png"
@@ -49,7 +48,6 @@ def generate_card(full_name, beneficiary_name, relation_name, card_number):
         # Process back template
         back_image = Image.open(back_template_path)
         back_draw = ImageDraw.Draw(back_image)
-        
 
         back_draw.text(positions["beneficiaryName"], f"{beneficiary_name}/{relation_name}", fill=font_color, anchor=anchor, font=font)
         

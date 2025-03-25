@@ -93,8 +93,6 @@ function generateCards($data, $outputDir) {
         $relation_name = ($rowData[20] ?? '');
         $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . rand(1111,9999));
 
-
-
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
 
@@ -157,7 +155,7 @@ function generateCards($data, $outputDir) {
         
         // Update progress
         $processed++;
-        $progress = ceil(($processed / ($totalRecords - 1)) * 100);
+        $progress = ceil(($processed / ($totalRecords)) * 100);
         
         file_put_contents('debug/debug_progress.log', "Processed: $processed / $totalRecords => $progress%\n", FILE_APPEND);
         file_put_contents($progressFile, $progress);

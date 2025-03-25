@@ -9,6 +9,7 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
+    margin-bottom: 33%;
     background: rgba(255, 255, 255, 0.15);
     padding: 30px;
     border-radius: 15px;
