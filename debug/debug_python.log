@@ -110,3 +110,92 @@ Running: python generateCard.py "Angeles Angeles" "Mike Tallada" "REL" "ST 7669 
 Output: outputs/img\ANGELES_ST 7669 0924 0000 0006front.png
 outputs/img\ANGELES_ST 7669 0924 0000 0006back.png
 
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" ""
+Output: Traceback (most recent call last):
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 77, in <module>
+    generate_card(full_name, beneficiary_name, relation_name, card_number)
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 10, in generate_card
+    card_number = "DC 0000 0325 0000 " + random.randint(1111,9999);
+                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" ""
+Output: Traceback (most recent call last):
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 77, in <module>
+    generate_card(full_name, beneficiary_name, relation_name, card_number)
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 10, in generate_card
+    card_number = "DC 0000 0325 0000 " + random.randint(1111,9999);
+                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" ""
+Output: Traceback (most recent call last):
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 77, in <module>
+    generate_card(full_name, beneficiary_name, relation_name, card_number)
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 10, in generate_card
+    card_number = "DC 0000 0325 0000 " + random.randint(1111,9999);
+                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" ""
+Output: Traceback (most recent call last):
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 77, in <module>
+    generate_card(full_name, beneficiary_name, relation_name, card_number)
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 10, in generate_card
+    card_number = "DC 0000 0325 0000 " + random.randint(1111,9999);
+                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" ""
+Output: Traceback (most recent call last):
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 77, in <module>
+    generate_card(full_name, beneficiary_name, relation_name, card_number)
+  File "C:\Users\Kenneth\Documents\xampp\htdocs\WARAPWARAPWARAP\generateCard.py", line 10, in generate_card
+    card_number = "DC 0000 0325 0000 " + random.randint(1111,9999);
+                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST-7699-0904-0000-0002"
+Output: outputs/img\TALLADA_ST-7699-0904-0000-0002front.png
+outputs/img\TALLADA_ST-7699-0904-0000-0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "DC 0000 0325 0000 6289"
+Output: outputs/img\DESIDERIO_DC 0000 0325 0000 6289front.png
+outputs/img\DESIDERIO_DC 0000 0325 0000 6289back.png
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "-"
+Output: outputs/img\TALLADA_-front.png
+outputs/img\TALLADA_-back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "-"
+Output: outputs/img\DESIDERIO_-front.png
+outputs/img\DESIDERIO_-back.png
+
+Running: python generateCard.py "Mike Tallada" "Eddrin" "Friend" "ST 7699 0904 0000 0002"
+Output: outputs/img\TALLADA_ST 7699 0904 0000 0002front.png
+outputs/img\TALLADA_ST 7699 0904 0000 0002back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "DC 0000 0325 0000 8750"
+Output: outputs/img\DESIDERIO_DC 0000 0325 0000 8750front.png
+outputs/img\DESIDERIO_DC 0000 0325 0000 8750back.png
+

@@ -84,14 +84,16 @@ function generateCards($data, $outputDir) {
     $processed = 0;
 
     foreach ($data as $index => $rowData) {
-        if ($index === 0 || strtoupper($rowData[3] ?? '') === 'PHYSICAL' || empty($rowData[1] ?? '')) {
+        if ($index === 0) {
             continue;
         }
 
-        $full_name = ($rowData[6] ?? '') . ' ' . ($rowData[5] ?? '');
-        $beneficiary_name = ($rowData[13] ?? '');
-        $relation_name = ($rowData[14] ?? '');
-        $cardNumber = $rowData[1] ?? '';
+        $full_name = ($rowData[23] ?? '') . ' ' . ($rowData[6] ?? '');
+        $beneficiary_name = ($rowData[19] ?? '');
+        $relation_name = ($rowData[20] ?? '');
+        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . rand(1111,9999));
+
+
 
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
