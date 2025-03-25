@@ -150,7 +150,7 @@ function sendEmails($fileEmailDict) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Files & Send Emails</title>
+    <title>SEND EMAILLLLLL</title>
     <style>
         /* General Reset */
         * {

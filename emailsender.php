@@ -75,7 +75,7 @@ function sendEmail($recipientEmail, $filePath) {
     }
 }
 ?>
-
+<html>
 <div class="content-area">
     <h3 class="text-center text-white">Upload File and Send via Email</h3>
     <div class="card p-4">
@@ -93,7 +93,7 @@ function sendEmail($recipientEmail, $filePath) {
         <div id="status" class="hidden alert mt-3"></div>
     </div>
 </div>
-
+</html>
 <script>
 
 function uploadFile(event) {
