@@ -1,0 +1,40 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS TESTING;
+USE TESTING;
+
+-- Create the table with 32 VARCHAR columns
+CREATE TABLE IF NOT EXISTS ENTRIES (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    column1 VARCHAR(255),
+    column2 VARCHAR(255),
+    column3 VARCHAR(255),
+    column4 VARCHAR(255),
+    column5 VARCHAR(255),
+    column6 VARCHAR(255),
+    column7 VARCHAR(255),
+    column8 VARCHAR(255),
+    column9 VARCHAR(255),
+    column10 VARCHAR(255),
+    column11 VARCHAR(255),
+    column12 VARCHAR(255),
+    column13 VARCHAR(255),
+    column14 VARCHAR(255),
+    column15 VARCHAR(255),
+    column16 VARCHAR(255),
+    column17 VARCHAR(255),
+    column18 VARCHAR(255),
+    column19 VARCHAR(255),
+    column20 VARCHAR(255),
+    column21 VARCHAR(255),
+    column22 VARCHAR(255),
+    column23 VARCHAR(255),
+    column24 VARCHAR(255),
+    column25 VARCHAR(255),
+    column26 VARCHAR(255),
+    column27 VARCHAR(255),
+    column28 VARCHAR(255),
+    column29 VARCHAR(255),
+    column30 VARCHAR(255),
+    column31 VARCHAR(255),
+    column32 VARCHAR(255)
+); 

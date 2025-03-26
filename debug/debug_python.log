@@ -259,3 +259,15 @@ Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "ST 7
 Output: outputs/img\DESIDERIO_ST 7699 0904 0000 0001front.png
 outputs/img\DESIDERIO_ST 7699 0904 0000 0001back.png
 
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "ST 7699 0904 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7699 0904 0000 0001front.png
+outputs/img\DESIDERIO_ST 7699 0904 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "ST 7699 0904 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7699 0904 0000 0001front.png
+outputs/img\DESIDERIO_ST 7699 0904 0000 0001back.png
+
+Running: python generateCard.py "Eddrin Desiderio" "Mike Tallada" "Friend" "ST 7699 0904 0000 0001"
+Output: outputs/img\DESIDERIO_ST 7699 0904 0000 0001front.png
+outputs/img\DESIDERIO_ST 7699 0904 0000 0001back.png
+

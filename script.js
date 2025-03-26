@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             clearInterval(progressInterval);
             progressBar.value = 100;
             progressText.textContent = "100%";
-            responseMessage.innerHTML = `<p style="color: green;">${data}</p>`;
+            responseMessage.innerHTML = `<p style="color: red;">${data}</p>`;
         })
         .catch(error => {
             responseMessage.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
