@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 require 'vendor/autoload.php';
+require 'DB/DatabaseManager.php';
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpWord\TemplateProcessor;
@@ -71,94 +72,66 @@ function loadExcelData($file) {
 }
 
 function generateCards($data, $outputDir) {
-    $progressFile = "outputs/progress.txt";
-
-    // Ensure the debug folder exists
-    $debugDir = "debug/";
-    if (!is_dir($debugDir)) {
-        mkdir($debugDir, 0777, true);
+    // Ensure outputs directory exists
+    if (!file_exists('outputs')) {
+        mkdir('outputs', 0777, true);
     }
 
-    file_put_contents($progressFile, "0");
-    $totalRecords = count($data) - 1;
-    $processed = 0;
-
     foreach ($data as $index => $rowData) {
-        if ($index === 0) {
-            continue;
-        }
-
+        if ($index === 0 || is_null($rowData[0])) continue;
         $full_name = ($rowData[23] ?? '') . ' ' . ($rowData[6] ?? '');
         $beneficiary_name = ($rowData[19] ?? '');
         $relation_name = ($rowData[20] ?? '');
         $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . rand(1111,9999));
 
+        $dbManager = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
+        try {
+            if (!$dbManager->cardNumberExists($cardNumber)) {
+                $dbManager->insertExcelData([$rowData]);
+            }
+        } catch (Exception $e) {
+            error_log("Database error: " . $e->getMessage());
+        }
+        $dbManager->close();
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
+        $cardNumber = str_replace(' ', '_', $cardNumber);
 
         $frontImage = "$outputDir{$lastName}_{$cardNumber}front.png";
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
         $featuresImage = 'templates/features_template.png';
 
         $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
-        file_put_contents('debug/debug_python.log', "Running: $command\n", FILE_APPEND);
         $output = shell_exec($command . " 2>&1");
-        file_put_contents('debug/debug_python.log', "Output: $output\n", FILE_APPEND);
-        
-        if ($processed >= $totalRecords) {
-            file_put_contents('debug/debug_progress.log', "Force setting progress to 100%\n", FILE_APPEND);
-            file_put_contents($progressFile, "100");
-        }
         
         if (!file_exists($frontImage) || !file_exists($backImage) || !file_exists($featuresImage)) {
-            file_put_contents('debug/debug_missing_images.log', "Missing images: $frontImage | $backImage | $featuresImage\n", FILE_APPEND);
-            die("Error: Generated images not found.");
+            error_log("Error: Generated images not found. Command output: " . $output);
+            continue;
         }
+        
         
         $templateFile = 'templates/template.docx';
         if (!file_exists($templateFile)) {
-            die("Error: Template file not found.");
+            error_log("Error: Template file not found.");
+            continue;
         }
 
-        $updatedFile = "outputs/pdf/{$lastName}_{$cardNumber}.docx";
-        copy($templateFile, $updatedFile);
-
-        $templateProcessor = new TemplateProcessor($updatedFile);
-
-        $templateProcessor->setImageValue('image', [
-            'path' => $frontImage,
-            'width' => 600,
-            'height' => 375,
-            'ratio' => false
-        ]);
-
-        $templateProcessor->setImageValue('image2', [
-            'path' => $backImage,
-            'width' => 600,
-            'height' => 375,
-            'ratio' => false
-        ]);
-
-        $templateProcessor->setImageValue('image3', [
-            'path' => $featuresImage,
-            'width' => 600,
-            'height' => 375,
-            'ratio' => false
-        ]);
-
         $outputDoc = "outputs/pdf/{$lastName}_{$cardNumber}.docx";
+        copy($templateFile, $outputDoc);
+
+        $templateProcessor = new TemplateProcessor($outputDoc);
+        $imageSettings = ['width' => 600, 'height' => 375, 'ratio' => false];
+        
+        $templateProcessor->setImageValue('image', ['path' => $frontImage] + $imageSettings);
+        $templateProcessor->setImageValue('image2', ['path' => $backImage] + $imageSettings);
+        $templateProcessor->setImageValue('image3', ['path' => $featuresImage] + $imageSettings);
+        
         $templateProcessor->saveAs($outputDoc);
         convertDocxToPdf($outputDoc, "outputs/pdf");
+        
         unlink($outputDoc);
         unlink($frontImage);
         unlink($backImage);
-        
-        // Update progress
-        $processed++;
-        $progress = ceil(($processed / ($totalRecords)) * 100);
-        
-        file_put_contents('debug/debug_progress.log', "Processed: $processed / $totalRecords => $progress%\n", FILE_APPEND);
-        file_put_contents($progressFile, $progress);
     }
 }
 ////////////////////////////////////////MAIN///////////////////////////////////////////////

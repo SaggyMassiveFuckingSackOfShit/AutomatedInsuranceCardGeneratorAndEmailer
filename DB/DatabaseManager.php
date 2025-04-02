@@ -15,7 +15,7 @@ class DatabaseManager {
 
     public function __construct($host, $username, $password, $database, $tableName) {
         try {
-            $this->conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+            $this->conn = new PDO("mysql:host=$host;port=4306;dbname=$database", $username, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->tableName = $tableName;
         } catch(PDOException $e) {
@@ -27,7 +27,6 @@ class DatabaseManager {
         try {
             $placeholders = str_repeat('?,', count($this->columns) - 1) . '?';
             $sql = "INSERT INTO {$this->tableName} (" . implode(',', array_map(fn($col) => "`$col`", $this->columns)) . ") VALUES ($placeholders)";
-            
             $stmt = $this->conn->prepare($sql);
             foreach ($data as $row) {
                 $stmt->execute(array_pad($row, 32, null));
