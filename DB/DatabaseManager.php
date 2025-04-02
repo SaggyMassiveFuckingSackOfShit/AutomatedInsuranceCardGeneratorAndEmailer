@@ -24,7 +24,9 @@ class DatabaseManager {
     }
 
     public function insertExcelData($data) {
+
         try {
+            file_put_contents("debug/debug_db.log", "cardNumber inserted " . $data[0][8] . "\n", FILE_APPEND);
             $placeholders = str_repeat('?,', count($this->columns) - 1) . '?';
             $sql = "INSERT INTO {$this->tableName} (" . implode(',', array_map(fn($col) => "`$col`", $this->columns)) . ") VALUES ($placeholders)";
             $stmt = $this->conn->prepare($sql);
@@ -37,12 +39,19 @@ class DatabaseManager {
         }
     }
 
+    public function getEntryID($cardNumber) {
+        $stmt = $this->conn->prepare("SELECT id WHERE CARDNUMBER = {$cardNumber}");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function cardNumberExists($cardNumber) {
         $stmt = $this->conn->prepare("SELECT COUNT(*) as count FROM {$this->tableName} WHERE CARDNUMBER = ?");
         $stmt->execute([$cardNumber]);
-        return $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0;
+        $result = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0; 
+        file_put_contents("debug/debug_db.log","cardNumberExists: {$cardNumber} : " . $result == 1 . "\n", FILE_APPEND);
+        return $result;
     }
-
     public function close() {
         $this->conn = null;
     }

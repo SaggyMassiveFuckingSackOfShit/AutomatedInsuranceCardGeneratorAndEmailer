@@ -1,0 +1,2 @@
+cardNumberExists: 100004 : 1
+cardNumberExists: 100004 : {(1 == 1)}

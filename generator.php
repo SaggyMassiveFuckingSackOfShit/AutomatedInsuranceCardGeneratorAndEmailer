@@ -83,8 +83,9 @@ function generateCards($data, $outputDir) {
         $beneficiary_name = ($rowData[19] ?? '');
         $relation_name = ($rowData[20] ?? '');
         $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . rand(1111,9999));
-
+        $rowData[8] = $cardNumber;
         $dbManager = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
+        
         try {
             if (!$dbManager->cardNumberExists($cardNumber)) {
                 $dbManager->insertExcelData([$rowData]);
