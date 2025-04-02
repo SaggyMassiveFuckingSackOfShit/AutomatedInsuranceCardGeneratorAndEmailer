@@ -18,3 +18,6 @@ Moving forward, our goal is to finalize the automation process, conduct thorough
 Accomplishment Report – March 19, 2025
 
 Today, we successfully created a database for testing purposes, which included building the necessary tables and writing queries to manage the data efficiently. We also manually inputted sample data into the database to simulate real-world usage and validate the functionality. We tweaked Jotform by adding a condition that hides the Card Number field when Digital is selected as the Card Type, ensuring a cleaner and more intuitive form experience.
+
+270325 ACCOMPLISHMENT
+CREATED A NEW TEST ENVIRONMENT FOR TESTING THE DATABASE, MADE MODIFICATIONS TO THE DATABASE TO FIX COLUMN COUNT ISSUES, UPDATED COLUMN NAMES TO MATCH EXCEL STRUCTURE, ADDED DATABASE CONNECTION HANDLING, ADDED ERROR HANDLING

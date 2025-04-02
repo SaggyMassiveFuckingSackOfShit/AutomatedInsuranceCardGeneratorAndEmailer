@@ -161,6 +161,7 @@ function generateCards($data, $outputDir) {
         file_put_contents($progressFile, $progress);
     }
 }
+////////////////////////////////////////MAIN///////////////////////////////////////////////
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     if (isset($_FILES["excelFile"]) && $_FILES["excelFile"]["error"] === UPLOAD_ERR_OK) {
