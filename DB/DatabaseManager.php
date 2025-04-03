@@ -3,13 +3,37 @@ class DatabaseManager {
     private $conn;
     private $tableName;
     private $columns = [
-        'SUBMISSION DATE', 'PLAN', 'UPLOADED FILE', 'PRIME PLAN', 'CARD TYPE',
-        'AVAILMENT DATE', 'SURNAME', 'EFFECTIVE DATE', 'CARDNUMBER', 'SO',
-        'BUH', 'BH', 'SD', 'REFERER OR HANDLING AGENT', 'DATA PRIVACY CLAUSE',
-        'ASSIGNED BPIA EMPLOYEE', 'COVERAGE CLAUSE', 'MOBILE NUMBER', 'EMAIL ADDRESS',
-        'BENEFICIARY FULL NAME', 'BENEFICIARY RELATIONSHIP', 'BENEFICIARY BIRTHDATE',
-        'COMPLETE ADDRESS', 'GIVE NAME', 'MIDDLE NAME', 'BITHDATE', 'AGE',
-        'STUDENT PLAN', 'MODE OF PAYMENT', 'SUBMISSION ID', 'SUBMISSION IP',
+        'SUBMISSION DATE',
+        'PLAN',
+        'UPLOADED FILE',
+        'PRIME PLAN',
+        'CARD TYPE',
+        'AVAILMENT DATE', 
+        'SURNAME', 
+        'EFFECTIVE DATE', 
+        'CARDNUMBER', 
+        'SO',
+        'BUH', 
+        'BH', 
+        'SD', 
+        'REFERER OR HANDLING AGENT', 
+        'DATA PRIVACY CLAUSE',
+        'ASSIGNED BPIA EMPLOYEE', 
+        'COVERAGE CLAUSE', 
+        'MOBILE NUMBER', 
+        'EMAIL ADDRESS',
+        'BENEFICIARY FULL NAME', 
+        'BENEFICIARY RELATIONSHIP', 
+        'BENEFICIARY BIRTHDATE',
+        'COMPLETE ADDRESS', 
+        'GIVE NAME', 
+        'MIDDLE NAME', 
+        'BITHDATE', 
+        'AGE',
+        'STUDENT PLAN', 
+        'MODE OF PAYMENT', 
+        'SUBMISSION ID', 
+        'SUBMISSION IP',
         'LAST UPDATE DATE'
     ];
 
@@ -24,9 +48,10 @@ class DatabaseManager {
     }
 
     public function insertExcelData($data) {
+        $timestamp = date('Y-m-d H:i:s');
 
         try {
-            file_put_contents("debug/debug_db.log", "cardNumber inserted " . $data[0][8] . "\n", FILE_APPEND);
+            file_put_contents("debug/debug_db.log", "[{$timestamp}] Entry inserted with card number of " . $data[0][8] . "\n", FILE_APPEND);
             $placeholders = str_repeat('?,', count($this->columns) - 1) . '?';
             $sql = "INSERT INTO {$this->tableName} (" . implode(',', array_map(fn($col) => "`$col`", $this->columns)) . ") VALUES ($placeholders)";
             $stmt = $this->conn->prepare($sql);
@@ -39,10 +64,16 @@ class DatabaseManager {
         }
     }
 
-    public function getEntryID($cardNumber) {
-        $stmt = $this->conn->prepare("SELECT id WHERE CARDNUMBER = {$cardNumber}");
-        $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+    public function findEmailByCardNumber($cardNumber) {
+        $stmt = $this->conn->prepare("SELECT `EMAIL ADDRESS` FROM {$this->tableName} WHERE CARDNUMBER = ?");
+        $stmt->execute([$cardNumber]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $timestamp = date('Y-m-d H:i:s');
+
+
+        file_put_contents("debug/debug_db.log","[{$timestamp}]  Fetched email: {$cardNumber} : " . $result['EMAIL ADDRESS'] . "\n", FILE_APPEND);
+        return $result['EMAIL ADDRESS'];
     }
 
     public function cardNumberExists($cardNumber) {

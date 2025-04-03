@@ -82,7 +82,7 @@ function generateCards($data, $outputDir) {
         $full_name = ($rowData[23] ?? '') . ' ' . ($rowData[6] ?? '');
         $beneficiary_name = ($rowData[19] ?? '');
         $relation_name = ($rowData[20] ?? '');
-        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . rand(1111,9999));
+        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 0000 ' . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT));
         $rowData[8] = $cardNumber;
         $dbManager = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
         
@@ -135,6 +135,8 @@ function generateCards($data, $outputDir) {
         unlink($backImage);
     }
 }
+
+
 ////////////////////////////////////////MAIN///////////////////////////////////////////////
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {

@@ -1,5 +1,6 @@
 <?php
 require 'vendor/autoload.php';
+require 'DB/DatabaseManager.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
@@ -49,15 +50,6 @@ function readExcelData($file) {
     return $data;
 }
 
-function findEmailByCardNumber($data, $cardNumber) {
-    foreach ($data as $row) {
-        if (!empty($row[8]) && $row[8] == $cardNumber) {
-            return $row[18] ?? null;
-        }
-    }
-    return null;
-}
-
 function getLatestUploadedFile($uploadDir) {
     if (!is_dir($uploadDir)) {
         return "Error: Directory does not exist.";
@@ -87,10 +79,19 @@ function processFiles() {
 
     foreach ($files as $file) {
         $cardNumber = extractCardNumber($file);
+        $db = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
         if ($cardNumber) {
-            $email = findEmailByCardNumber($data, $cardNumber);
-            if ($email) {
-                $result[$file] = $email;
+            $email = $db->findEmailByCardNumber( $cardNumber);
+
+            //TODO REMOVE $modifiedEmail, revert to $email
+            ////////////////////////////////////////////////////////////////////////                    TESTING
+            list($localPart, $domainPart) = explode('@', $email);
+            $modifiedEmail = $localPart . '+' . $cardNumber . '@' . $domainPart;
+            //////////////////////////////////////////////////////////////////////////
+
+
+            if ($modifiedEmail) {
+                $result[$file] = $modifiedEmail;
             }
         }
     }

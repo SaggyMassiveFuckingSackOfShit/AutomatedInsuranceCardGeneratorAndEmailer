@@ -1,2 +1,221 @@
-cardNumberExists: 100004 : 1
-cardNumberExists: 100004 : {(1 == 1)}
+Fetched email: 100006 : Array
+[2025-04-03 08:01:36]  Fetched email: 100001 : Array
+[2025-04-03 08:01:36]  Fetched email: 100002 : 
+[2025-04-03 08:01:36]  Fetched email: 100003 : Array
+[2025-04-03 08:01:36]  Fetched email: 100004 : Array
+[2025-04-03 08:01:36]  Fetched email: 100005 : Array
+[2025-04-03 08:01:36]  Fetched email: 100006 : Array
+[2025-04-03 08:02:00]  Fetched email: 100001 : 
+[2025-04-03 08:02:00]  Fetched email: 100002 : 
+[2025-04-03 08:02:00]  Fetched email: 100003 : 
+[2025-04-03 08:02:00]  Fetched email: 100004 : 
+[2025-04-03 08:02:00]  Fetched email: 100005 : 
+[2025-04-03 08:02:00]  Fetched email: 100006 : 
+[2025-04-03 08:02:18]  Fetched email: 100001 : 
+[2025-04-03 08:02:18]  Fetched email: 100002 : 
+[2025-04-03 08:02:18]  Fetched email: 100003 : 
+[2025-04-03 08:02:18]  Fetched email: 100004 : 
+[2025-04-03 08:02:18]  Fetched email: 100005 : 
+[2025-04-03 08:02:18]  Fetched email: 100006 : 
+[2025-04-03 08:05:13]  Fetched email: 100001 : myrel@bewiserphilippines.com
+[2025-04-03 08:05:13]  Fetched email: 100002 : 
+[2025-04-03 08:05:13]  Fetched email: 100003 : myrel@bewiserphilippines.com
+[2025-04-03 08:05:13]  Fetched email: 100004 : myrel@bewiserphilippines.com
+[2025-04-03 08:05:13]  Fetched email: 100005 : angelesk13@gmail.com
+[2025-04-03 08:05:13]  Fetched email: 100006 : angelesk13@gmail.com
+cardNumber inserted 100004
+cardNumber inserted 100005
+cardNumber inserted 100006
+cardNumber inserted 100007
+cardNumber inserted 100008
+cardNumber inserted 100009
+cardNumber inserted 100010
+cardNumber inserted 100011
+cardNumber inserted 100012
+cardNumber inserted 100013
+cardNumber inserted 100014
+cardNumber inserted 100015
+cardNumber inserted 100016
+cardNumber inserted 100017
+cardNumber inserted 100018
+cardNumber inserted 100019
+cardNumber inserted 100020
+cardNumber inserted 100021
+cardNumber inserted 100022
+cardNumber inserted 100023
+cardNumber inserted 100024
+cardNumber inserted 100025
+cardNumber inserted 100026
+cardNumber inserted 100027
+cardNumber inserted 100028
+cardNumber inserted 100029
+cardNumber inserted 100030
+cardNumber inserted 100031
+cardNumber inserted 100032
+cardNumber inserted 100033
+cardNumber inserted 100034
+cardNumber inserted 100035
+cardNumber inserted 100036
+cardNumber inserted 100037
+cardNumber inserted 100038
+cardNumber inserted 100039
+cardNumber inserted 100040
+cardNumber inserted 100041
+cardNumber inserted 100042
+cardNumber inserted 100043
+cardNumber inserted 100044
+cardNumber inserted 100045
+cardNumber inserted 100046
+cardNumber inserted 100047
+cardNumber inserted 100048
+cardNumber inserted 100049
+cardNumber inserted 100050
+cardNumber inserted 100051
+cardNumber inserted 100052
+[2025-04-03 08:16:38]  Fetched email: 100004 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100005 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100006 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100007 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100008 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100009 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100010 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100011 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100012 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100013 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100014 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100015 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100016 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100017 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100018 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100019 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100020 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100021 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100022 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100023 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100024 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100025 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100026 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100027 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100028 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100029 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100030 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100031 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100032 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100033 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100034 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100035 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100036 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100037 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100038 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100039 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100040 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100041 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100042 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100043 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100044 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100045 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100046 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100047 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100048 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100049 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100050 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100051 : angelesk13@gmail.com
+[2025-04-03 08:16:38]  Fetched email: 100052 : angelesk13@gmail.com
+[2025-04-03 10:46:41] Entry inserted with card number of TEST100004
+[2025-04-03 10:46:45] Entry inserted with card number of TEST100005
+[2025-04-03 10:46:47] Entry inserted with card number of TEST100006
+[2025-04-03 10:46:49] Entry inserted with card number of TEST100007
+[2025-04-03 10:46:51] Entry inserted with card number of TEST100008
+[2025-04-03 10:46:53] Entry inserted with card number of TEST100009
+[2025-04-03 10:46:55] Entry inserted with card number of TEST100010
+[2025-04-03 10:46:57] Entry inserted with card number of TEST100011
+[2025-04-03 10:47:00] Entry inserted with card number of TEST100012
+[2025-04-03 10:47:02] Entry inserted with card number of TEST100013
+[2025-04-03 10:47:04] Entry inserted with card number of TEST100014
+[2025-04-03 10:47:06] Entry inserted with card number of TEST100015
+[2025-04-03 10:47:08] Entry inserted with card number of TEST100016
+[2025-04-03 10:47:10] Entry inserted with card number of TEST100017
+[2025-04-03 10:47:12] Entry inserted with card number of TEST100018
+[2025-04-03 10:47:14] Entry inserted with card number of TEST100019
+[2025-04-03 10:47:16] Entry inserted with card number of TEST100020
+[2025-04-03 10:47:19] Entry inserted with card number of TEST100021
+[2025-04-03 10:47:21] Entry inserted with card number of TEST100022
+[2025-04-03 10:47:23] Entry inserted with card number of TEST100023
+[2025-04-03 10:47:25] Entry inserted with card number of TEST100024
+[2025-04-03 10:47:27] Entry inserted with card number of TEST100025
+[2025-04-03 10:47:30] Entry inserted with card number of TEST100026
+[2025-04-03 10:47:32] Entry inserted with card number of TEST100027
+[2025-04-03 10:47:34] Entry inserted with card number of TEST100028
+[2025-04-03 10:47:37] Entry inserted with card number of TEST100029
+[2025-04-03 10:47:39] Entry inserted with card number of TEST100030
+[2025-04-03 10:47:41] Entry inserted with card number of TEST100031
+[2025-04-03 10:47:43] Entry inserted with card number of TEST100032
+[2025-04-03 10:47:45] Entry inserted with card number of TEST100033
+[2025-04-03 10:47:47] Entry inserted with card number of TEST100034
+[2025-04-03 10:47:50] Entry inserted with card number of TEST100035
+[2025-04-03 10:47:52] Entry inserted with card number of TEST100036
+[2025-04-03 10:47:54] Entry inserted with card number of TEST100037
+[2025-04-03 10:47:56] Entry inserted with card number of TEST100038
+[2025-04-03 10:47:58] Entry inserted with card number of TEST100039
+[2025-04-03 10:48:00] Entry inserted with card number of TEST100040
+[2025-04-03 10:48:02] Entry inserted with card number of TEST100041
+[2025-04-03 10:48:04] Entry inserted with card number of TEST100042
+[2025-04-03 10:48:06] Entry inserted with card number of TEST100043
+[2025-04-03 10:48:09] Entry inserted with card number of TEST100044
+[2025-04-03 10:48:11] Entry inserted with card number of TEST100045
+[2025-04-03 10:48:13] Entry inserted with card number of TEST100046
+[2025-04-03 10:48:15] Entry inserted with card number of TEST100047
+[2025-04-03 10:48:17] Entry inserted with card number of TEST100048
+[2025-04-03 10:48:19] Entry inserted with card number of TEST100049
+[2025-04-03 10:48:21] Entry inserted with card number of TEST100050
+[2025-04-03 10:48:23] Entry inserted with card number of TEST100051
+[2025-04-03 10:48:25] Entry inserted with card number of TEST100052
+[2025-04-03 10:49:37]  Fetched email: TEST100004 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100005 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100006 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100007 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100008 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100009 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100010 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100011 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100012 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100013 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100014 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100015 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100016 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100017 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100018 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100019 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100020 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100021 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100022 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100023 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100024 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100025 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100026 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100027 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100028 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100029 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100030 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100031 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100032 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100033 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100034 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100035 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100036 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100037 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100038 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100039 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100040 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100041 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100042 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100043 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100044 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100045 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100046 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100047 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100048 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100049 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100050 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100051 : angelesk13@gmail.com
+[2025-04-03 10:49:37]  Fetched email: TEST100052 : angelesk13@gmail.com
