@@ -219,16 +219,23 @@ $access_granted = $_SESSION['access_granted'] ?? false;
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="generator.php" class="nav-link" onclick="loadPage('generator.html', event)">
+                            <a href="generator.html" class="nav-link" onclick="loadPage('generator.html', event)">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>Card Generator</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="emailsender.php" class="nav-link" onclick="loadPage('mailer.php', event)">
+                            <a href="mailer.php" class="nav-link" onclick="loadPage('mailer.php', event)">
                                 <i class="nav-icon fas fa-envelope"></i>
                                 <p>Email Sender</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="" class="nav-link" onclick="loadPage('', event)">
+                                <i class="nav-icon fas fa-envelope"></i>
+                                <p>PHPMYADMIN</p>
                             </a>
                         </li>
                     </ul>
