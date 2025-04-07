@@ -9,7 +9,6 @@ if (!file_exists($progressFile)) {
 
 $progress = file_get_contents($progressFile);
 
-// If progress is stuck at 100% before a new request, reset it
 if ((int)$progress > 100) {
     $progress = 100;
     file_put_contents($progressFile, "100");

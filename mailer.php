@@ -83,15 +83,8 @@ function processFiles() {
         if ($cardNumber) {
             $email = $db->findEmailByCardNumber( $cardNumber);
 
-            //TODO REMOVE $modifiedEmail, revert to $email
-            ////////////////////////////////////////////////////////////////////////                    TESTING
-            list($localPart, $domainPart) = explode('@', $email);
-            $modifiedEmail = $localPart . '+' . $cardNumber . '@' . $domainPart;
-            //////////////////////////////////////////////////////////////////////////
-
-
-            if ($modifiedEmail) {
-                $result[$file] = $modifiedEmail;
+            if ($email) {
+                $result[$file] = $$email;
             }
         }
     }
@@ -153,41 +146,40 @@ function sendEmails($fileEmailDict) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEND EMAILLLLLL</title>
     <style>
-        /* General Reset */
+        
         * {
-            margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Body Styling */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(90deg, #c25b18, #2a5298);
-        }
-
-        /* Card Container */
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            height: 1080px;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            width: 380px;
-            animation: fadeIn 0.8s ease-in-out;
+            background: linear-gradient(135deg, #c25b18, #1d2b46);
+            color: white;
+            overflow-x: hidden;
         }
 
-        /* Fade-In Animation */
+        .container {
+            max-width: 600px;
+            margin-top: 33%;
+            margin-bottom: 33%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Title Styling */
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
@@ -195,7 +187,6 @@ function sendEmails($fileEmailDict) {
             font-weight: 700;
         }
 
-        /* Button Styling */
         button {
             width: 100%;
             padding: 14px;
@@ -214,7 +205,6 @@ function sendEmails($fileEmailDict) {
             transform: scale(1.05);
         }
 
-        /* Status Text */
         #status {
             margin-top: 15px;
             font-size: 14px;
@@ -222,7 +212,6 @@ function sendEmails($fileEmailDict) {
             font-weight: 500;
         }
 
-        /* Alert Box */
         .alert {
             position: relative;
             margin-top: 20px;
@@ -244,7 +233,6 @@ function sendEmails($fileEmailDict) {
             transform: scale(1.05);
         }
 
-        /* Progress Bar Container */
         .progress-container {
             width: 100%;
             background: #ddd;
@@ -254,7 +242,6 @@ function sendEmails($fileEmailDict) {
             height: 12px;
         }
 
-        /* Progress Bar */
         .progress-bar {
             width: 0%;
             height: 100%;

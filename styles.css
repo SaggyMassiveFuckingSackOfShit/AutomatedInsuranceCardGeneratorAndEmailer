@@ -3,7 +3,6 @@ body {
     text-align: center;
     background: linear-gradient(135deg, #c25b18, #1d2b46);
     color: white;
-    margin: 25px;
     overflow-x: hidden;
 }
 .container {
