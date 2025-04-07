@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-require 'DB/DatabaseManager.php';
+require 'DatabaseManager.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
