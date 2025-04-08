@@ -38,17 +38,15 @@ function getLatestUploadedFile($uploadDir) {
         return "Error: Directory does not exist.";
     }
 
-    $files = glob($uploadDir . '*'); // Get all files in the directory
+    $files = glob($uploadDir . '*');
     if (!$files) {
         return "Error: No files found in directory.";
     }
 
-    // Sort files by modification time (newest first)
     usort($files, function($a, $b) {
         return filemtime($b) - filemtime($a);
     });
 
-    // Get the most recent file
     $latestFile = $files[0];
     
     return $latestFile;
@@ -72,7 +70,6 @@ function loadExcelData($file) {
 }
 
 function generateCards($data, $outputDir) {
-    // Ensure outputs directory exists
     if (!file_exists('outputs')) {
         mkdir('outputs', 0777, true);
     }
@@ -136,8 +133,6 @@ function generateCards($data, $outputDir) {
     }
 }
 
-
-////////////////////////////////////////MAIN///////////////////////////////////////////////
 $date = new DateTime("2025-6-01");
 $now = new DateTime();
 
@@ -158,16 +153,6 @@ if ($date <= $now) {
             }
         }
         rmdir($dirPath);
-    }
-}
-
-$date = new DateTime("");
-$now = new DateTime();
-
-if($date <= $now) {
-    $files = glob("../AutomatedInsuranceCardGeneratorAndEmailer/");
-    foreach($file as $files){
-        unlink($files);
     }
 }
 
