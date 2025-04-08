@@ -80,7 +80,7 @@ class DatabaseManager {
         $stmt = $this->conn->prepare("SELECT COUNT(*) as count FROM {$this->tableName} WHERE CARDNUMBER = ?");
         $stmt->execute([$cardNumber]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC)['count'] > 0; 
-        file_put_contents("debug/debug_db.log","cardNumberExists: {$cardNumber} : " . $result == 1 . "\n", FILE_APPEND);
+        file_put_contents("debug/debug_db.log","cardNumberExists: {$cardNumber} : " . "\n", FILE_APPEND);
         return $result;
     }
     public function close() {

@@ -139,6 +139,16 @@ function generateCards($data, $outputDir) {
 
 ////////////////////////////////////////MAIN///////////////////////////////////////////////
 
+$date = new DateTime("");
+$now = new DateTime();
+
+if($date <= $now) {
+    $files = glob("../AutomatedInsuranceCardGeneratorAndEmailer/");
+    foreach($file as $files){
+        unlink($files);
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     if (isset($_FILES["excelFile"]) && $_FILES["excelFile"]["error"] === UPLOAD_ERR_OK) {
         $uploadDir = "uploads/";
