@@ -73,7 +73,7 @@ class DatabaseManager {
         $stmt->execute([str_replace('_', ' ', $cardNumber)]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        file_put_contents("debug/debug_db.log","[{$timestamp}]  Fetched email: {$cardNumber} : " . $result['EMAIL ADDRESS'] . "\n", FILE_APPEND);
+        //file_put_contents("debug/debug_db.log","[{$timestamp}]  Fetched email: {$cardNumber} : " . $result['EMAIL ADDRESS'] . "\n", FILE_APPEND);
         return $result['EMAIL ADDRESS'];
     }
 
