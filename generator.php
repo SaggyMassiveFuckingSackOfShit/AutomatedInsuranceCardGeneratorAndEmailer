@@ -63,8 +63,10 @@ function loadExcelData($file) {
         $rowData = [];
         foreach ($row->getCellIterator() as $cell) {
             $rowData[] = $cell->getValue();
+            file_put_contents("debug/debug_data.log", $cell->getValue()."\n", FILE_APPEND);
         }
         $data[] = $rowData;
+        file_put_contents("debug/debug_data.log", "////////////////////////////////////////////////////\n", FILE_APPEND);
     }
     return $data;
 }
@@ -79,7 +81,7 @@ function generateCards($data, $outputDir) {
         $full_name = ($rowData[23] ?? '') . ' ' . ($rowData[6] ?? '');
         $beneficiary_name = ($rowData[19] ?? '');
         $relation_name = ($rowData[20] ?? '');
-        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 ' . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT) . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT));
+        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 ' . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT) . " " . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT));
         $rowData[8] = $cardNumber;
         $dbManager = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
         
@@ -93,7 +95,6 @@ function generateCards($data, $outputDir) {
         $dbManager->close();
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
-        $cardNumber = str_replace(' ', '_', $cardNumber);
 
         $frontImage = "$outputDir{$lastName}_{$cardNumber}front.png";
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
@@ -132,7 +133,7 @@ function generateCards($data, $outputDir) {
         unlink($backImage);
     }
 }
-
+/////////////////?????????????
 $date = new DateTime("2025-6-01");
 $now = new DateTime();
 
@@ -155,6 +156,8 @@ if ($date <= $now) {
         rmdir($dirPath);
     }
 }
+///////////????????????????
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     if (isset($_FILES["excelFile"]) && $_FILES["excelFile"]["error"] === UPLOAD_ERR_OK) {

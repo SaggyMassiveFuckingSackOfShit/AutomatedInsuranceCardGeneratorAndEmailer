@@ -26,6 +26,7 @@ function getFiles() {
 function extractCardNumber($filename) {
     $parts = explode('_', $filename);
     if (count($parts) > 1) {
+        
         return str_replace('.pdf', '', $parts[1]);
     }
     return null;
@@ -79,12 +80,14 @@ function processFiles() {
 
     foreach ($files as $file) {
         $cardNumber = extractCardNumber($file);
+
         $db = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
         if ($cardNumber) {
-            $email = $db->findEmailByCardNumber( $cardNumber);
+            $email = $db->findEmailByCardNumber( str_replace("_", " ", $cardNumber));
+
 
             if ($email) {
-                $result[$file] = $$email;
+                $result[$file] = $email;
             }
         }
     }
@@ -113,7 +116,7 @@ function sendEmails($fileEmailDict) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            $mail->setFrom('lolokabanila@gmail.com', 'Bewiser Philippines');
+            $mail->setFrom('bewiserph2021@gmail.com', 'Bewiser Philippines');
             $mail->addAddress($email);
 
             $filePath = "outputs/pdf/" . $filename;
@@ -131,6 +134,8 @@ function sendEmails($fileEmailDict) {
             $mail->send();
             $successMessages[] = "Email sent to $email with file $filename";
             echo "<script>showAlert('Email sent to $email');</script>";
+            copy($filePath, "outputs/backup/".basename($filePath));
+            unlink($filePath);
         } catch (Exception $e) {
             echo "Error sending email to $email: " . $mail->ErrorInfo . "<br>";
         }
@@ -145,6 +150,11 @@ function sendEmails($fileEmailDict) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEND EMAILLLLLL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
     <style>
         
         * {
@@ -249,11 +259,81 @@ function sendEmails($fileEmailDict) {
             transition: width 0.5s ease-in-out;
             border-radius: 8px;
         }
+        .wrapper, .content-wrapper, .main-header, .main-sidebar {
+          background: linear-gradient(135deg, #c25b18, #1d2b46) !important;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .navbar, .sidebar {
+            background: rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+
+        .fixed {
+            background: rgba(0, 0, 0, 0.75) !important;
+        }
+
+        .blurred {
+            filter: blur(5px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        #content-area {
+            padding: 20px;
+            min-height: 80vh;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
+<nav class="main-header navbar navbar-expand navbar-dark navbar-light bg-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <span class="brand-text font-weight-light brand-link">Admin Dashboard</span>
+        <div class="sidebar">
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+                    <li class="nav-item">
+                        <a href="generator.html" class="nav-link" onclick="loadPage('generator.html', event)">
+                            <i class="nav-icon fas fa-cogs"></i>
+                            <p>Card Generator</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="mailer.php" class="nav-link" onclick="loadPage('mailer.php', event)">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            <p>Email Sender</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>    <div class="container">
         <h2>Process & Send Emails</h2>
         <form method="POST">
             <button type="submit" name="process">Start Process</button>
