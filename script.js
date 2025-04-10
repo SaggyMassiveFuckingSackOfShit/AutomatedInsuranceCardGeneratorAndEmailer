@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById("excelFile");
     const fileNameDisplay = document.getElementById("fileName");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const progressContainer = document.getElementById("progressContainer");
     const responseMessage = document.getElementById("responseMessage");
     const uploadForm = document.getElementById("uploadForm");
 
@@ -26,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("excelFile", fileInput.files[0]);
         formData.append("generate", "1"); // This simulates the submit button name
 
+        progressContainer.style.display = "block";
+        startProgressBar();
 
         fetch("generator.php", {
             method: "POST",
@@ -34,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             clearInterval(progressInterval);
+            progressBar.value = 100;
+            progressText.textContent = "100%";
             responseMessage.innerHTML = `<p style="color: red;">${data}</p>`;
         })
         .catch(error => {
@@ -42,4 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     let progressInterval;
+    function startProgressBar() {
+        let progress = 0;
+        progressInterval = setInterval(() => {
+            if (progress >= 90) {
+                clearInterval(progressInterval);
+            } else {
+                progress += 10;
+                progressBar.value = progress;
+                progressText.textContent = progress + "%";
+            }
+        }, 500);
+    }
 });

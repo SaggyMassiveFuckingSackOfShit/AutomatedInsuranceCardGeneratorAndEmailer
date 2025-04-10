@@ -61,13 +61,25 @@ function loadExcelData($file) {
     $data = [];
     foreach ($sheet->getRowIterator() as $row) {
         $rowData = [];
+        $i = 0;
         foreach ($row->getCellIterator() as $cell) {
+            if($i>=32){
+                break;
+            }else{
+                $i++;
+            }
             $rowData[] = $cell->getValue();
             file_put_contents("debug/debug_data.log", $cell->getValue()."\n", FILE_APPEND);
         }
         $data[] = $rowData;
         file_put_contents("debug/debug_data.log", "////////////////////////////////////////////////////\n", FILE_APPEND);
     }
+    file_put_contents("debug/debug_data.log", $cell->getValue()."\n", FILE_APPEND);
+
+    for($i=0; $i < 32 ; $i++){
+
+    }
+
     return $data;
 }
 

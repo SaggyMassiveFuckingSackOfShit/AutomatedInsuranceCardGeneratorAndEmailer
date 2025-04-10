@@ -34,7 +34,7 @@ class DatabaseManager {
         'MODE OF PAYMENT', 
         'SUBMISSION ID', 
         'SUBMISSION IP',
-        'LAST UPDATE DATE',
+        'LAST UPDATE DATE'
     ];
 
     public function __construct($host, $username, $password, $database, $tableName) {
@@ -56,7 +56,7 @@ class DatabaseManager {
             $sql = "INSERT INTO {$this->tableName} (" . implode(',', array_map(fn($col) => "`$col`", $this->columns)) . ") VALUES ($placeholders)";
             $stmt = $this->conn->prepare($sql);
             foreach ($data as $row) {
-                $stmt->execute(array_pad($row, 33, null));
+                $stmt->execute(array_pad($row, 32, null));
             }
             return true;
         } catch(PDOException $e) {
