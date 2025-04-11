@@ -1,11 +1,10 @@
 import datetime
 import sys
 import os
-import random
 from PIL import Image, ImageDraw, ImageFont
 
 
-def generate_card(full_name, beneficiary_name, relation_name, card_number):
+def generate_card(full_name, beneficiary_name, relation_name, card_number, ):
     try:
         # Load the card templates
         front_template_path = "templates/front_template.png"

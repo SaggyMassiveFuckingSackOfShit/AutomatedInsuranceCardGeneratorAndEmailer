@@ -52,7 +52,7 @@ function getLatestUploadedFile($uploadDir) {
     return $latestFile;
 }
 
-function loadExcelData($file) {
+function loadExcelData($file) {     
     if (!file_exists($file)) {
         die("Error: File not found.");
     }
@@ -89,9 +89,11 @@ function generateCards($data, $outputDir) {
         $full_name = ($rowData[23] ?? '') . ' ' . ($rowData[6] ?? '');
         $beneficiary_name = ($rowData[19] ?? '');
         $relation_name = ($rowData[20] ?? '');
-        $cardNumber = str_replace('-',' ',$rowData[8] ?? 'DC 0000 0325 ' . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT) . " " . str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT));
-        $rowData[8] = $cardNumber;
         $dbManager = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
+        
+        $lastInsertedId = str_split(str_pad($dbManager->getLastInsertedId(), 8 , '0', STR_PAD_LEFT), 4);
+        $rowData[8] = ($rowData[8] ?? str_replace(' ', '_', $rowData[8] ?? "DC 0000 0325 " . $lastInsertedId[0] . " " . $lastInsertedId[1])); 
+        $cardNumber = $rowData[8];
         
         try {
             if (!$dbManager->cardNumberExists($cardNumber)) {
@@ -100,14 +102,26 @@ function generateCards($data, $outputDir) {
         } catch (Exception $e) {
             error_log("Database error: " . $e->getMessage());
         }
+        
         $dbManager->close();
         $nameParts = explode(" ", trim($full_name));
         $lastName = strtoupper(end($nameParts));
 
+        
+        $templateDir = "templates/";
+
         $frontImage = "$outputDir{$lastName}_{$cardNumber}front.png";
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
-        $featuresImage = 'templates/features_template.png';
-
+        if (strcasecmp($rowData[1], "Gold Plan") == 0) {
+            $featuresImage = $templateDir . "goldFeatured.png";
+        } elseif (strcasecmp($rowData[1], "Prime Plan") == 0) {
+            $featuresImage = $templateDir . "primeFeatured.png";
+        } elseif (strcasecmp($rowData[1], "Student Plan") == 0) {
+            $featuresImage = $templateDir . "studentFeatured.png";
+        } else {
+            $featuresImage = $templateDir . "standardFeatured.png";
+        }
+            
         $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
         $output = shell_exec($command . " 2>&1");
         

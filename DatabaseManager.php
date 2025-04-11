@@ -48,10 +48,9 @@ class DatabaseManager {
     }
 
     public function insertExcelData($data) {
-        $timestamp = date('Y-m-d H:i:s');
 
         try {
-            file_put_contents("debug/debug_db.log", "[{$timestamp}] Entry inserted with card number of " . $data[0][8] . "\n", FILE_APPEND);
+            file_put_contents("debug/debug_db.log", "[{$this->getTimeStamp()}] Entry inserted with card number of " . $data[0][8] . "\n", FILE_APPEND);
             $placeholders = str_repeat('?,', count($this->columns) - 1) . '?';
             $sql = "INSERT INTO {$this->tableName} (" . implode(',', array_map(fn($col) => "`$col`", $this->columns)) . ") VALUES ($placeholders)";
             $stmt = $this->conn->prepare($sql);
@@ -65,15 +64,14 @@ class DatabaseManager {
     }
 
     public function findEmailByCardNumber($cardNumber) {
-        $timestamp = date('Y-m-d H:i:s');
         $stmt = $this->conn->prepare("SELECT `EMAIL ADDRESS` FROM {$this->tableName} WHERE CARDNUMBER = ?");
 
-        file_put_contents("debug/debug_db.log", " [{$timestamp}] TRIED FETCHING: $cardNumber" . "\n", FILE_APPEND);
+        file_put_contents("debug/debug_db.log", "[{$this->getTimeStamp()}] TRIED FETCHING: $cardNumber" . "\n", FILE_APPEND);
 
         $stmt->execute([str_replace('_', ' ', $cardNumber)]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        //file_put_contents("debug/debug_db.log","[{$timestamp}]  Fetched email: {$cardNumber} : " . $result['EMAIL ADDRESS'] . "\n", FILE_APPEND);
+        file_put_contents("debug/debug_db.log", "[{$this->getTimeStamp()}]  Fetched email: {$cardNumber} : " . $result['EMAIL ADDRESS'] . "\n", FILE_APPEND);
         return $result['EMAIL ADDRESS'];
     }
 
@@ -86,5 +84,17 @@ class DatabaseManager {
     }
     public function close() {
         $this->conn = null;
+    }
+
+    public function getLastInsertedId() {
+        $stmt = $this->conn->prepare("SELECT MAX(ID) as last_id FROM {$this->tableName}");
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC)['last_id'];
+        file_put_contents("debug/debug_db.log","getLastInsertedId: {$result} " . "\n", FILE_APPEND);
+        return (int)$result + 1;
+    }
+
+    public function getTimeStamp() {
+        return date('Y-m-d H:i:s');
     }
 } 
