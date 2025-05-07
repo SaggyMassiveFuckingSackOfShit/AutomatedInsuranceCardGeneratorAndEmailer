@@ -37,7 +37,6 @@ function readExcelData($file) {
     if (file_exists($file)) {
         $spreadsheet = IOFactory::load($file);
         $sheet = $spreadsheet->getActiveSheet();
-
         foreach ($sheet->getRowIterator() as $row) {
             $rowData = [];
             foreach ($row->getCellIterator() as $cell) {
@@ -55,20 +54,14 @@ function getLatestUploadedFile($uploadDir) {
     if (!is_dir($uploadDir)) {
         return "Error: Directory does not exist.";
     }
-
-    $files = glob($uploadDir . '*'); // Get all files in the directory
+    $files = glob($uploadDir . '*');
     if (!$files) {
         return "Error: No files found in directory.";
     }
-
-    // Sort files by modification time (newest first)
     usort($files, function($a, $b) {
         return filemtime($b) - filemtime($a);
     });
-
-    // Get the most recent file
     $latestFile = $files[0];
-    
     return $latestFile;
 }
 
@@ -77,15 +70,11 @@ function processFiles() {
     $files = getFiles();
     $data = readExcelData($excelFile);
     $result = [];
-
     foreach ($files as $file) {
         $cardNumber = extractCardNumber($file);
-
         $db = new DatabaseManager('localhost', 'root', '', 'TESTING', 'ENTRIES');
         if ($cardNumber) {
             $email = $db->findEmailByCardNumber( str_replace("_", " ", $cardNumber));
-
-
             if ($email) {
                 $result[$file] = $email;
             }
@@ -100,12 +89,10 @@ function sendEmails($fileEmailDict) {
         echo "<script>updateStatus('Sending email to $email...');</script>";
         flush();
         ob_flush();
-
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "Invalid email for $filename: $email <br>";
             continue;
         }
-
         $mail = new PHPMailer(true);
         try {
             $mail->isSMTP();
@@ -115,10 +102,8 @@ function sendEmails($fileEmailDict) {
             $mail->Password   = $_ENV['SMTP_PASS'];
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
-
             $mail->setFrom('bewiserph2021@gmail.com', 'Bewiser Philippines');
             $mail->addAddress($email);
-
             $filePath = "outputs/pdf/" . $filename;
             if (file_exists($filePath)) {
                 $mail->addAttachment($filePath);
@@ -126,11 +111,9 @@ function sendEmails($fileEmailDict) {
                 echo "File not found: $filePath <br>";
                 continue;
             }
-
             $mail->isHTML(true);
             $mail->Subject = "Your Digital Card";
             $mail->Body = "Dear user,<br><br>Please find your attached digital card.<br><br>Best regards,<br>Your Team";
-
             $mail->send();
             $successMessages[] = "Email sent to $email with file $filename";
             echo "<script>showAlert('Email sent to $email');</script>";
@@ -156,13 +139,11 @@ function sendEmails($fileEmailDict) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
     <style>
-        
         * {
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             height: 1080px;
             font-family: 'Poppins', sans-serif;
@@ -171,7 +152,6 @@ function sendEmails($fileEmailDict) {
             color: white;
             overflow-x: hidden;
         }
-
         .container {
             max-width: 600px;
             margin-top: 33%;
@@ -184,19 +164,16 @@ function sendEmails($fileEmailDict) {
             backdrop-filter: blur(10px);
             animation: fadeIn 1s ease-in-out;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         h2 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
             font-weight: 700;
         }
-
         button {
             width: 100%;
             padding: 14px;
@@ -209,19 +186,16 @@ function sendEmails($fileEmailDict) {
             border-radius: 8px;
             transition: background 0.3s ease, transform 0.2s ease;
         }
-
         button:hover {
             background: linear-gradient(135deg, #0056b3, #003f8a);
             transform: scale(1.05);
         }
-
         #status {
             margin-top: 15px;
             font-size: 14px;
             color: #007BFF;
             font-weight: 500;
         }
-
         .alert {
             position: relative;
             margin-top: 20px;
@@ -237,12 +211,10 @@ function sendEmails($fileEmailDict) {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
-
         .alert.show {
             opacity: 1;
             transform: scale(1.05);
         }
-
         .progress-container {
             width: 100%;
             background: #ddd;
@@ -251,7 +223,6 @@ function sendEmails($fileEmailDict) {
             overflow: hidden;
             height: 12px;
         }
-
         .progress-bar {
             width: 0%;
             height: 100%;
@@ -262,7 +233,6 @@ function sendEmails($fileEmailDict) {
         .wrapper, .content-wrapper, .main-header, .main-sidebar {
           background: linear-gradient(135deg, #c25b18, #1d2b46) !important;
         }
-
         .card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -270,29 +240,23 @@ function sendEmails($fileEmailDict) {
             transition: transform 0.3s;
             backdrop-filter: blur(5px);
         }
-
         .card:hover {
             transform: translateY(-5px);
         }
-
         .navbar, .sidebar {
             background: rgba(0, 0, 0, 0.3) !important;
         }
-
         .nav-link:hover {
             color: #ffcc00 !important;
         }
-
         .fixed {
             background: rgba(0, 0, 0, 0.75) !important;
         }
-
         .blurred {
             filter: blur(5px);
             pointer-events: none;
             user-select: none;
         }
-
         #content-area {
             padding: 20px;
             min-height: 80vh;
@@ -300,7 +264,6 @@ function sendEmails($fileEmailDict) {
             border-radius: 12px;
             backdrop-filter: blur(5px);
         }
-
     </style>
 </head>
 <body>
@@ -311,7 +274,6 @@ function sendEmails($fileEmailDict) {
             </li>
         </ul>
     </nav>
-
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <span class="brand-text font-weight-light brand-link">Admin Dashboard</span>
         <div class="sidebar">
@@ -323,7 +285,6 @@ function sendEmails($fileEmailDict) {
                             <p>Card Generator</p>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a href="mailer.php" class="nav-link" onclick="loadPage('mailer.php', event)">
                             <i class="nav-icon fas fa-envelope"></i>
@@ -344,7 +305,6 @@ function sendEmails($fileEmailDict) {
         </div>
         <div id="alert" class="alert"></div>
     </div>
-
     <script>
         function showAlert(message) {
             const alertBox = document.getElementById('alert');
@@ -354,16 +314,13 @@ function sendEmails($fileEmailDict) {
                 alertBox.classList.remove('show');
             }, 3000);
         }
-
         function updateStatus(message) {
             document.getElementById('status').textContent = message;
         }
-
         function updateProgress(percent) {
             document.getElementById('progress-bar').style.width = percent + '%';
         }
     </script>
-
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['process'])) {
         echo "<script>updateStatus('Processing files...'); updateProgress(10);</script>";
