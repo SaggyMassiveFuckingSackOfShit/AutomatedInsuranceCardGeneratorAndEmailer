@@ -86,15 +86,24 @@ function generateCards($data, $outputDir) {
         $templateDir = "templates/";
         $frontImage = "$outputDir{$lastName}_{$cardNumber}front.png";
         $backImage = "$outputDir{$lastName}_{$cardNumber}back.png";
+
+        
         if (strcasecmp($rowData[1], "Gold Plan") == 0) {
             $featuresImage = $templateDir . "goldFeatured.png";
         } elseif (strcasecmp($rowData[1], "Prime Plan") == 0) {
-            $featuresImage = $templateDir . "primeFeatured.png";
+            $featuresImage = $templateDir . $rowData[3]  .".jpg";
+            if(!file_exists($featuresImage)){
+                $featuresImage = $templateDir . "primeFeatured.png";
+            }
         } elseif (strcasecmp($rowData[1], "Student Plan") == 0) {
-            $featuresImage = $templateDir . "studentFeatured.png";
+            $featuresImage = $templateDir . $rowData[29]  .".jpg";
+            if(!file_exists($featuresImage)){
+                $featuresImage = $templateDir . "studentFeatured.png";
+            }
         } else {
             $featuresImage = $templateDir . "standardFeatured.png";
         }
+
             
         $command = "python generateCard.py " . escapeshellarg($full_name) . " " . escapeshellarg($beneficiary_name) . " " . escapeshellarg($relation_name) . " " . escapeshellarg($cardNumber);
         $output = shell_exec($command . " 2>&1");
